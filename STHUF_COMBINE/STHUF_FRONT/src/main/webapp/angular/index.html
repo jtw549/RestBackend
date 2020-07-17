@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STHUF</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+    <!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+      <script src="js/lib/html5shiv-dist/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <div class="main-container" >
+	
+		<header id="header">
+			<div ng-switch="headerView">		      
+		   		<login-view ng-switch-when="login"></login-view>
+		   		<non-login-view ng-switch-when="non-login"></non-login-view>
+		   </div>
+		</header>
+
+	    <div id="main-content" class="main-content container-fluid">
+	    	<!--<img class="background-img" src="http://sthuf.com/v1/beta/images/background-img.jpg" />-->
+		    <div class="container">
+				<div class="row">
+                    <div ng-view></div>
+                </div>
+			</div> <!-- /content -->
+		</div> <!-- main-content -->
+		
+		<footer>
+			<nav class="navbar" role="navigation">
+			  <div class="container-fluid">
+			  	<div class="row">
+				  	<ul class="nav navbar-nav">
+					  <li><a href="http://localhost:8888/Sthuf/Website/Github/src/STHUF_Web/#/about">About</a> <span>|</span></li>
+					  <li><a href="http://localhost:8888/Sthuf/Website/Github/src/STHUF_Web/#/privacy">Help</a> <span>|</span> </li>
+					  <li><a href="http://localhost:8888/Sthuf/Website/Github/src/STHUF_Web/#/terms">Terms & Policy</a>  <span>|</span> </li>
+					  <li><a href="http://localhost:8888/Sthuf/Website/Github/src/STHUF_Web/#/report-bug">Report a Bug</a></li>
+					</ul>
+				</div>
+			  </div>
+			</nav>
+	    </footer> 
+	    
+    </div> <!-- /main-container -->
+    
+    <!-- Load the scripts -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular/angular-route.min.js"></script>
+    <script src="libs/angular/angular-mocks.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="appController.js"></script>
+    <script src="config.js"></script>
+ 	<script src="components/mockDataService.js"></script>
+ 	<script src="components/rest.js"></script>
+ 	<script src="components/utilityService.js"></script>
+ 	<script src="components/popoverDirective.js"></script>
+ 	<script src="components/checkboxDirective.js"></script>
+ 	<script src="components/previewImageDirective.js"></script>
+ 	<script src="app/header/headerDirectives.js"></script>
+ 	<script src="app/home/home.js"></script>
+ 	<script src="app/home/homeController.js"></script>
+ 	<script src="app/session/session.js"></script>
+ 	<script src="app/session/sessionController.js"></script>
+ 	<script src="app/session/sessionService.js"></script>
+ 	<script src="app/inventory/inventory.js"></script>
+    <script src="app/inventory/inventoryController.js"></script>
+    <script src="app/inventory/inventoryService.js"></script>
+    <script src="app/inventory/inventoryDirectives.js"></script>
+    
+  </body>
+</html>

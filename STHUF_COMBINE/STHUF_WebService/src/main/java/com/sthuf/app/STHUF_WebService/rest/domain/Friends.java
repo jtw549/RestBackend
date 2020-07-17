@@ -1,0 +1,39 @@
+package com.sthuf.app.STHUF_WebService.rest.domain;
+
+import java.util.ArrayList;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.sthuf.app.STHUF_Business.events.Friends.FriendsDetails;
+
+@XmlRootElement
+public class Friends {
+	private int position;
+	
+	private String formula;
+	
+	private int userId;
+	
+	private int friendId;
+	
+	public FriendsDetails toFriendsDetails() {
+		FriendsDetails friendsDetails = new FriendsDetails();
+		friendsDetails.setFriendId(friendId);
+		friendsDetails.setUserId(userId);
+		return friendsDetails;
+	}
+	
+	public Friends fromFriendsDetails(FriendsDetails friendsDetails) {
+		Friends friends = new Friends();
+		friends.friendId=friendsDetails.getFriendId();
+		friends.userId=friendsDetails.getUserId();
+		return friends;
+	}
+	public ArrayList<String> appVerify(){
+		ArrayList<String> appValues = new ArrayList<String>();
+		appValues.add(formula);
+		appValues.add(String.valueOf(position));
+		return appValues;
+		
+	}
+}

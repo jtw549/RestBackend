@@ -1,0 +1,56 @@
+<form id="editItemForm" class="edit-item-form" role="form">
+	<div class="table-responsive">
+	  <table class="table table-bordered item-info">
+	  	<tr>
+	  		<td>Make</td>
+	  		<td><input type="text" class="form-control no-style" id="make" placeholder="{{0.make}}"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Name</td>
+	  		<td><input type="text" class="form-control no-style" id="inventoryName" placeholder="{{0.inventoryName}}"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Description</td>
+	  		<td><input type="text" class="form-control no-style" id="description" placeholder="{{0.description}}"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Seller</td>
+	  		<td><input type="text" class="form-control no-style" id="inventoryName" placeholder="{{0.seller}}"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Price</td>
+	  		<td><input type="text" class="form-control no-style" id="cost" placeholder="{{0.cost}}"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Purchased</td>
+	  		<td><input type="text" class="form-control no-style" id="purchaseDate" placeholder="{{0.purchaseDate}}"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Model</td>
+	  		<td><input type="text" class="form-control no-style" id="model" placeholder="{{0.model}}"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Quantity</td>
+	  		<td><input type="text" class="form-control no-style" id="quantity" placeholder="{{0.quantity}}"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Condition</td>
+	  		<td>{{0.condition}}</td>
+	  	</tr>
+	  	<tr>
+	  		<td>Categories</td>
+	  		<td>
+	  			{{#each 0.categories.data}}
+	  				{{name}}
+				{{/each}}
+	  		</td>
+	  	</tr>
+	  </table>
+	  
+	  <div class="col-lg-8">
+		<button type="button" class="btn btn-primary">Save</button>
+		<button class="btn btn-primary delete-cancel">Cancel</button>
+	  </div>
+	
+	</div>
+</form>

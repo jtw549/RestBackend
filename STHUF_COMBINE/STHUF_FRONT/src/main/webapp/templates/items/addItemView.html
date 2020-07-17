@@ -1,0 +1,41 @@
+<form id="addItemForm" class="add-item" role="form">
+<div class="modal-header">
+	<button type="button" class="close icon-delete" data-dismiss="modal" aria-hidden="true"></button>
+	<h3 class="modal-title" id="deleteCategory">Add Item</h3>
+</div>
+<div class="modal-body">
+	<div class="file-input-wrapper">
+		<div class="img-src">Add Photo</div>
+		<input type="file" class="form-control item-upload-pic" id="">
+	</div>
+	
+	<div class="form-group itemHeader">
+		<input type="text" class="form-control item-make" id="itemMake" placeholder="Make/Brand">
+	    <input type="text" class="form-control item-name" id="itemName" placeholder="Name">
+	</div>    
+	    
+	<div class="form-group">
+	 	<label for="exampleInputEmail1">Description</label>
+	    <textarea class="form-control" id="itemDesc" rows="5"></textarea>
+	</div>
+	<div class="form-group">
+	 	<label for="exampleInputEmail1">Select a Category</label>
+	 	<div class="checkbox">
+		  <label>
+		    <input type="checkbox" value="">
+		    Appliances
+		  </label>
+		</div>
+		<div class="checkbox">
+		  <label>
+		    <input type="checkbox" value="">
+		    Electronics
+		  </label>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+	<button type="button" class="btn btn-primary">Add Item</button>
+</div>
+</form>

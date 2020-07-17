@@ -1,0 +1,23 @@
+<ul class="nav nav-tabs nav-item-tabs">
+	<li ng-class="{active:isActiveTab('itemInfoView')}"><a href="#" class="tab-info" ng-click="itemTabSelected($event, 'itemInfoView')"><span class="icon-clipboard"></span>Info</a></li>
+	<li ng-class="{active:isActiveTab('itemPhotoListThumbView')}"><span class="navbar-separator"></span><a href="#" ng-click="itemTabSelected($event, 'itemPhotoListThumbView')" class="tab-photos"><span class="icon-camera"></span>Photos</a></li>
+	<li ng-class="{active:isActiveTab('itemVideoListThumbView')}"><span class="navbar-separator"></span><a href="#" ng-click="itemTabSelected($event, 'itemVideoListThumbView')" class="tab-videos"><span class="icon-recorder"></span>Videos</a></li>
+	<li ng-class="{active:isActiveTab('itemNoteListView')}"><span class="navbar-separator"></span><a href="#" ng-click="itemTabSelected($event, 'itemNoteListView')" class="tab-notes"><span class="icon-note"></span>Notes</a></li>
+	<li ng-class="{active:isActiveTab('itemReceiptListThumbView')}"><span class="navbar-separator"></span><a href="#" ng-click="itemTabSelected($event, 'itemReceiptListThumbView')" class="tab-receipts"><span class="icon-tag"></span>Receipts</a></li>
+	<li ng-class="{active:isActiveTab('itemWarrantyView')}"><span class="navbar-separator"></span><a href="#" ng-click="itemTabSelected($event, 'itemWarrantyView')" class="tab-warranty"><span class="icon-plus-big"></span>Warranty</a></li>
+	<li ng-class="{active:isActiveTab('itemCommentListView')}"><span class="navbar-separator"></span><a href="#" ng-click="itemTabSelected($event, 'itemCommentListView')" class="tab-comments"><span class="icon-bubbles"></span>Comments</a></li>
+	<li ng-class="{active:isActiveTab('itemShareView')}"><span class="navbar-separator"></span><a href="#" ng-click="itemTabSelected($event, 'itemShareView')" class="tab-share"><span class="icon-share"></span>Share</a></li>
+	<li ng-class="{active:isActiveTab('itemSellView')}"><span class="navbar-separator"></span><a href="#" ng-click="itemTabSelected($event, 'itemSellView')" class="tab-sell"><span class="icon-dollar"></span>Sell</a></li>
+</ul>
+		
+<div class="tab-content">
+	<div class="tab-pane active">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="tab-pane-container">
+					<div ng-include="itemTab.view"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

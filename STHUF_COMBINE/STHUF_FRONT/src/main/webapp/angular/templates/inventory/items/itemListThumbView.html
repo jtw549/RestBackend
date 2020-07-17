@@ -1,0 +1,16 @@
+<div class="col-header col-header-wd"><p><span></span> Items<p></div>
+<div class="flexible-lmt">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="thumb-container">
+			  <div ng-repeat="item in userItems" class="col-xs-7" >
+			  	<article class="thumbnail">
+				    <a href="#" class="">
+				      <img ng-src='{{item.photos.data.0.src}}' alt="" />
+				    </a>
+			  	</article>
+			  </div>
+		  </div>
+		</div>
+	</div>
+</div>

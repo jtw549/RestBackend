@@ -1,0 +1,17 @@
+{
+    "categories": {
+        "count": 2,
+        "data": [
+            {
+                "id": "",
+                "name": "Sports",
+                "dateAdded": ""
+            },
+             {
+                "id": "",
+                "name": "Sneakers",
+                "dateAdded": ""
+            }
+        ]
+    }
+}

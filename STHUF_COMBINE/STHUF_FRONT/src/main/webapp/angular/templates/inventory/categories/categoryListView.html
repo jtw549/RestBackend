@@ -1,0 +1,21 @@
+<div class="col-header">Categories</div>
+<div class="column-content">
+    <ul id="categories-column" class="list-group col-content">
+        <li class="list-group-item active">
+            <a href="#" class="" id="catid-all" ng-click="categorySelected($event)" data="0"><span class="arrow hide icon-arrow-right"></span>All</a>
+        </li>
+        <li ng-repeat="category in userCategories" class="list-group-item">
+            <a href="#" class="" id="" ng-click="categorySelected($event)" data='{{category.userCategoriesId}}'><span class="category-name">{{category.categoryName}}</span><span class="badge">14</span><span class="arrow hide icon-arrow-right"></span></a>
+        </li>
+    </ul>
+</div>
+
+<div class="col-footer clearfix">
+    <ul class="col-footer-nav">
+        <li><a href="#" id="addCategory" class="" ng-click="addCategorySelected($event)"><span class="icon-plus"></span></a></li>
+        <li><a href="#" id="renameCategory" class="" ng-click="editCategorySelected($event)"><span class="icon-settings"></span></a></li>
+        <li><a href="#" id="deleteCategory" class="" ng-click="deleteCategorySelected($event)"><span class="icon-delete"></span></a></li>
+        <li class="pull-right"><a href="#" class="" data-toggle="modal" data-target="#delete-category"><span class="icon-arrow-down"></span></a></li>
+        <li class="pull-right"><a href="#" class="" data-toggle="modal" data-target="#delete-category"><span class="icon-arrow-up"></span></a></li>
+    </ul>
+</div>

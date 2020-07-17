@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.5.1.201404300732-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/resources/ApplicationContextWebServ.xml</config>
+	</configs>
+	<autoconfigs>
+		<config>java:com.sthuf.app.STHUF_WebService.config.CoreConfig</config>
+		<config>java:com.sthuf.app.STHUF_WebService.config.SecurityConfig</config>
+		<config>java:com.sthuf.app.STHUF_WebService.config.MvcConfig</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

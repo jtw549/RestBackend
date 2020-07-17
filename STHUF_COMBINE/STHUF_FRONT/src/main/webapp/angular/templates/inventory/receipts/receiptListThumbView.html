@@ -1,0 +1,33 @@
+<div class="item-receipts">
+	<div class="col-lg-22 tab-header">
+		<h3 class="pull-left">Receipts</h3>
+	
+		<ul class="nav nav-tab-pane-options pull-right">
+			<li class="pull-left"><a href="#" class="icon-lock" data-toggle="modal" data-target="#item-privacy"></a></li>
+			<li class="pull-left"><a href="javascript:void(0);" class="icon-settings" data-popover-content="receipts-nav-list" default-popover></a></li>
+		</ul>
+		
+		<div id="receipts-nav-list" class="hide">
+			<ul class="list-unstyled">
+				<li><a>Add Receipts</a></li>
+				<li><a class="popover-link" data-view="deleteReceipt">Delete Receipts</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="thumb-container clear-both">
+		  <div ng-repeat="receipt in userItem.0.receipts.data" class="col-xs-7">
+		  	<article class="thumbnail">
+		  		<div class="delete-selection" id=""><span class="delete-check"></span></div>
+			    <a href="#" class="">
+			      <img ng-src="{{receipt.src}}" alt="" />
+			    </a>
+		  	</article>
+		  </div>
+	</div>
+	
+	<div class="col-lg-22 clear-both delete-footer hide text-center">
+		<button class="btn btn-primary delete-photos">Delete</button>
+		<button class="btn btn-primary delete-cancel">Cancel</button>
+	</div>
+</div>
