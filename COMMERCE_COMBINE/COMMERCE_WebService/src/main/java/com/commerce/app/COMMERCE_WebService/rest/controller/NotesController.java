@@ -53,7 +53,7 @@ public class NotesController {
 		
 	}
 	
-	@RequestMapping(value="/deleteNote",method = RequestMethod.POST)
+	@RequestMapping(value="/deleteNote",method = RequestMethod.DELETE)
 	public ResponseEntity<InventoryNotes> deleteNote(@RequestBody InventoryNotes inventoryNotes, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryNotes.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -76,7 +76,7 @@ public class NotesController {
 		
 	}
 	
-	@RequestMapping(value="/getNotes",method = RequestMethod.POST)
+	@RequestMapping(value="/getNotes",method = RequestMethod.GET)
 	public ResponseEntity<InventoryNotes> getNotes(@RequestBody InventoryNotes inventoryNotes, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryNotes.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -89,7 +89,7 @@ public class NotesController {
 		
 	}
 	
-	@RequestMapping(value="/updateNote",method = RequestMethod.POST)
+	@RequestMapping(value="/updateNote",method = RequestMethod.PUT)
 	public ResponseEntity<InventoryNotes> updateNote(@RequestBody InventoryNotes inventoryNotes, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryNotes.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();

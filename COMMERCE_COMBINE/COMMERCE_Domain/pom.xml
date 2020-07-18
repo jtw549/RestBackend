@@ -10,7 +10,6 @@
 	</parent>
 	<artifactId>COMMERCE_Domain</artifactId>
 	<name>COMMERCE_Domain</name>
-	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -29,29 +28,29 @@
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk</artifactId>
-			<version>1.9.13</version>
+			<version>1.9.40</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
-			<version>1.4.0.RELEASE</version>
+			<version>3.0.1.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>2.11.4</version>
+			<version>3.9.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>4.0.1.RELEASE</version>
+			<version>4.3.19.RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.0.1.RELEASE</version>
+			<version>4.3.19.RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
 
@@ -79,7 +78,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.0.2.RELEASE</version>
+			<version>4.3.19.RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>

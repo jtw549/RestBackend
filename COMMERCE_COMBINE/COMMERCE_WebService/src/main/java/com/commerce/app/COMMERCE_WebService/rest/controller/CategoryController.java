@@ -52,17 +52,17 @@ public class CategoryController {
 		
 	}
 	
-	@RequestMapping(value="/updateCategory",method = RequestMethod.POST)
+	@RequestMapping(value="/updateCategory",method = RequestMethod.PUT)
 	public ResponseEntity<UserCategories> updateCategories(@RequestBody UserCategories categories, UriComponentsBuilder builder) {
 	/*	AppAuthenticatedEvent appAuthenticatedEvent = appauthenticationService.authenticateA.
 		CategoryUpdatedEvent categoryUpdatedEvent = catergoryService.updateCategory(new UpdateCategoryEvent(categories.toCategoryDetails()));
     	UserCategories updatedUserCategories = categories.fromCategoryDetails(categoryUpdatedEvent.getCategoryDetails());
     	
-    	return new ResponseEntity<UserCategories>(updatedUserCategories, HttpStatus.OK);
+    	return new ResponseEntity<UserCategories>(updatedUserCategories, HttpStatus.OK);*/
 		
 	}
 	
-	@RequestMapping(value="/deleteCategory",method = RequestMethod.POST)
+	@RequestMapping(value="/deleteCategory",method = RequestMethod.DELETE)
 	public ResponseEntity<UserCategories> deleteCategories(@RequestBody UserCategories categories, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appauthenticationService.authenticateApp(new AuthenticateAppEvent(categories.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -83,7 +83,7 @@ public class CategoryController {
 		
 	}
 	
-	@RequestMapping(value="/getCategories",method = RequestMethod.POST)
+	@RequestMapping(value="/getCategories",method = RequestMethod.GET)
 	public ResponseEntity<UserCategories> getCategories(@RequestBody UserCategories categories, UriComponentsBuilder builder) {
 	/*	AppAuthenticatedEvent appAuthenticatedEvent = appauthenticationService.authenticateApp(new AuthenticateAppEvent(categories.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();

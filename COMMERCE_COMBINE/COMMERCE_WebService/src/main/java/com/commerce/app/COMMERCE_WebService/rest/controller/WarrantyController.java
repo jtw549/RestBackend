@@ -52,7 +52,7 @@ public class WarrantyController {
 		
 	}
 	
-	@RequestMapping(value="/updateWarranty",method = RequestMethod.POST)
+	@RequestMapping(value="/updateWarranty",method = RequestMethod.PUT)
 	public ResponseEntity<InventoryWarranty> updateWarranty(@RequestBody InventoryWarranty inventoryWarranty, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryWarranty.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -67,7 +67,7 @@ public class WarrantyController {
 	}
 	
 
-	@RequestMapping(value="/deleteWarranty",method = RequestMethod.POST)
+	@RequestMapping(value="/deleteWarranty",method = RequestMethod.DELETE)
 	public ResponseEntity<InventoryWarranty> deleteWarranty(@RequestBody InventoryWarranty inventoryWarranty, UriComponentsBuilder builder) {
 	/*	AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryWarranty.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -89,7 +89,7 @@ public class WarrantyController {
 	}
 	
 
-	@RequestMapping(value="/getWarranty",method = RequestMethod.POST)
+	@RequestMapping(value="/getWarranty",method = RequestMethod.GET)
 	public ResponseEntity<InventoryWarranty> getWarranty(@RequestBody InventoryWarranty inventoryWarranty, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryWarranty.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();

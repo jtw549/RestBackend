@@ -64,7 +64,7 @@ public class MediaController {
 		return new ResponseEntity<InventoryMedia>(newInventoryMedia,HttpStatus.CREATED);
 	}
 	
-	@RequestMapping(value="/deleteMedia",method = RequestMethod.POST)
+	@RequestMapping(value="/deleteMedia",method = RequestMethod.DELETE)
 	public ResponseEntity<InventoryMedia> deleteMedia (@RequestBody InventoryMedia inventoryMedia, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventories.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();

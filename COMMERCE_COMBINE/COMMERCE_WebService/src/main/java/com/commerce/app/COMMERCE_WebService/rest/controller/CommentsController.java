@@ -53,7 +53,7 @@ public class CommentsController {
 		
 	}
 	
-	@RequestMapping(value="/deleteComment",method = RequestMethod.POST)
+	@RequestMapping(value="/deleteComment",method = RequestMethod.DELETE)
 	public ResponseEntity<InventoryComments> deleteComment(@RequestBody InventoryComments inventoryComments, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryComments.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -74,7 +74,7 @@ public class CommentsController {
 		
 	}
 	
-	@RequestMapping(value="/getComments",method = RequestMethod.POST)
+	@RequestMapping(value="/getComments",method = RequestMethod.GET)
 	public ResponseEntity<InventoryComments> getComments(@RequestBody InventoryComments inventoryComments, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryComments.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -88,7 +88,7 @@ public class CommentsController {
 		
 	}
 	
-	@RequestMapping(value="/updateComment",method = RequestMethod.POST)
+	@RequestMapping(value="/updateComment",method = RequestMethod.PUT)
 	public ResponseEntity<InventoryComments> updateComment(@RequestBody InventoryComments inventoryComments, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventoryComments.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();

@@ -78,7 +78,7 @@ public class InventoryController {
 		
 	}
 	
-	@RequestMapping(value="/updateItem",method = RequestMethod.POST)
+	@RequestMapping(value="/updateItem",method = RequestMethod.PUT)
 	public ResponseEntity<Inventories> updateItem(@RequestBody Inventories inventories, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventories.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -91,7 +91,7 @@ public class InventoryController {
 		
 	}
 	
-	@RequestMapping(value="/deleteItem",method = RequestMethod.POST)
+	@RequestMapping(value="/deleteItem",method = RequestMethod.DELETE)
 	public ResponseEntity<Inventories> deleteItem(@RequestBody Inventories inventories, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventories.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -111,7 +111,7 @@ public class InventoryController {
 		
 	}
 	
-	@RequestMapping(value="/getItem",method = RequestMethod.POST)
+	@RequestMapping(value="/getItem",method = RequestMethod.GET)
 	public ResponseEntity<Inventories> getItem(@RequestBody Inventories inventories, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventories.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -124,7 +124,7 @@ public class InventoryController {
 		
 	}
 	
-	@RequestMapping(value="/getItems",method = RequestMethod.POST)
+	@RequestMapping(value="/getItems",method = RequestMethod.GET)
 	public ResponseEntity<Inventories> getItems(@RequestBody Inventories inventories, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventories.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
@@ -144,7 +144,7 @@ public class InventoryController {
 		
 	}
 	
-	@RequestMapping(value="/getItemsbyCategory",method = RequestMethod.POST)
+	@RequestMapping(value="/getItemsbyCategory",method = RequestMethod.GET)
 	public ResponseEntity<Inventories> getItemsbyCategory(@RequestBody Inventories inventories, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventories.appVerify()));
     	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
