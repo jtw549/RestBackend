@@ -19,7 +19,7 @@ public class Address implements Serializable{
 	
 	private String state;
 
-	private int zip;
+	private String zip;
 	
 	private String companyName;
 }
