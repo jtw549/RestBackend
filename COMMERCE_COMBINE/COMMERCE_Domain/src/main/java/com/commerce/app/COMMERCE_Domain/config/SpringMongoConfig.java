@@ -10,14 +10,15 @@ import com.mongodb.MongoClient;
 @Configuration
 public class SpringMongoConfig extends AbstractMongoConfiguration {
  
+	//make this a property file.
 	@Override
 	public String getDatabaseName() {
-		return "sthuf-sandbox-dev";
+		return "commerce-sandbox-dev";
 	}
  
 	@Override
 	@Bean
 	public Mongo mongo() throws Exception {
-		return new MongoClient("ds045907.mongolab.com",45907);
+		return new MongoClient("ds11111.mongolab.com",45907);
 	}
 }

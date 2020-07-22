@@ -16,7 +16,7 @@ import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 import com.commerce.app.COMMERCE_Domain.repository.ItemsRepository;
 
 @Service("inventoryService")
-@ComponentScan("com.sthuf.app.STHUF_Domain.repository")
+@ComponentScan("com.commerce.app.COMMERCE_Domain.repository")
 public class InventoryEventHandler implements InventoryService{
 	
 	private static Logger LOG = LoggerFactory.getLogger(InventoryEventHandler.class);

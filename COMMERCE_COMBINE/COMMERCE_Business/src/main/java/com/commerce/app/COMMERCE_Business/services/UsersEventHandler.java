@@ -20,7 +20,7 @@ import com.commerce.app.COMMERCE_Domain.domain.Users;
 import com.commerce.app.COMMERCE_Domain.repository.UserRepository;
 
 @Service("userService")
-@ComponentScan("com.sthuf.app.STHUF_Domain.repository")
+@ComponentScan("com.commerce.app.COMMERCE_Domain.repository")
 public class UsersEventHandler implements UsersService{
 
 	

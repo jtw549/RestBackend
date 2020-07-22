@@ -17,7 +17,7 @@ import com.commerce.app.COMMERCE_Domain.domain.InventoryMedia;
 import com.commerce.app.COMMERCE_Domain.repository.MediaRepository;
 
 @Service("mediaService")
-@ComponentScan("com.sthuf.app.STHUF_Domain.repository")
+@ComponentScan("com.commerce.app.COMMERCE_Domain.repository")
 public class MediaEventHandler implements MediaService{
 	
 	private static Logger LOG = LoggerFactory.getLogger(MediaEventHandler.class);

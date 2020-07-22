@@ -143,7 +143,7 @@ public class InventoryController {
 		
 		
 	}
-	
+	// might delete this...but then again...I will not bring back all the items just to sort in the frontend.
 	@RequestMapping(value="/getItemsbyCategory",method = RequestMethod.GET)
 	public ResponseEntity<Inventories> getItemsbyCategory(@RequestBody Inventories inventories, UriComponentsBuilder builder) {
 		/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(inventories.appVerify()));

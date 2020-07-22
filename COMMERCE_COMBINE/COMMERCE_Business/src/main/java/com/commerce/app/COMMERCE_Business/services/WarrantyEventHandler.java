@@ -18,7 +18,7 @@ import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.repository.WarrantyRepository;
 
 @Service("warrantyService")
-@ComponentScan("com.sthuf.app.STHUF_Domain.repository")
+@ComponentScan("com.commerce.app.COMMERCE_Domain.repository")
 public class WarrantyEventHandler implements WarrantyService{
 
 	private static Logger LOG = LoggerFactory.getLogger(WarrantyEventHandler.class);

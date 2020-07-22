@@ -9,21 +9,21 @@
 
 <context:spring-configured />
 <context:annotation-config/>
-<!-- <context:component-scan base-package="com.sthuf.app.STHUF_Business.services" /> 
-<mongo:mongo host="ds045907.mongolab.com" port="45907" />-->
+<!-- <context:component-scan base-package="com.commerce.app.COMMERCE_Business.services" /> 
+<mongo:mongo host="ds11111.mongolab.com" port="45907" />-->
  
- <mongo:repositories base-package="com.sthuf.app.STHUF_Domain"/>
+ <mongo:repositories base-package="com.commerce.app.COMMERCE_Domain"/>
  
  <!--  <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
     <constructor-arg ref="mongo" />
-    <constructor-arg value="sthuf-sandbox-dev" />
+    <constructor-arg value="commerce-sandbox-dev" />
     <constructor-arg name="userCredentials" ref="userCredentials"/>
   </bean>
   
   <bean id="userCredentials" class="org.springframework.data.authentication.UserCredentials">
-    <constructor-arg name="username" value="sthuf-main-app" />
-    <constructor-arg name="password" value="SthufAppC0nn3ction" />
+    <constructor-arg name="username" value="commerce-main-app" />
+    <constructor-arg name="password" value="commerceAppC0nn3ction" />
 </bean> -->
-<context:component-scan base-package="com.sthuf.app.STHUF_Domain" />
+<context:component-scan base-package="com.commerce.app.COMMERCE_Domain" />
 </beans>
 

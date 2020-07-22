@@ -17,7 +17,7 @@ import com.commerce.app.COMMERCE_Domain.domain.InventoryComments;
 import com.commerce.app.COMMERCE_Domain.repository.CommentsRepository;
 
 @Service("commentsService")
-@ComponentScan("com.sthuf.app.STHUF_Domain.repository")
+@ComponentScan("com.commerce.app.COMMERCE_Domain.repository")
 public class CommentsEventHandler implements CommentsService{
 
 	private static Logger LOG = LoggerFactory.getLogger(CommentsEventHandler.class);

@@ -15,7 +15,7 @@ import com.commerce.app.COMMERCE_Domain.domain.AppTable;
 @Service
 public class AppAuthenticationEventHandler implements AppAuthenticationService {
 
-	
+	//I don't know about this...It is easier to use am Auth framework.
 	private MongoTemplate mongoTemplate;
 	
 	@Override

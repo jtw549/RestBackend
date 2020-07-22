@@ -7,8 +7,8 @@
 
 <context:spring-configured />
 <context:annotation-config/>
-<!-- <context:component-scan base-package="com.sthuf.app.STHUF_WebService" /> -->
-<context:component-scan base-package="com.sthuf.app.STHUF_Business" />
+<!-- <context:component-scan base-package="com.commerce.app.COMMERCE_WebService" /> -->
+<context:component-scan base-package="com.commerce.app.COMMERCE_Business" />
 
-<!-- <context:component-scan base-package="com.sthuf.app.STHUF_Domain" /> -->
+<!-- <context:component-scan base-package="com.commerce.app.COMMERCE_Domain" /> -->
 </beans>

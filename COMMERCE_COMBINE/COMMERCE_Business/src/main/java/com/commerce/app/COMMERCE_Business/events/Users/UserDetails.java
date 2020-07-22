@@ -117,7 +117,7 @@ public class UserDetails {
 		userDetails.setLastName(users.getLastName());
 		userDetails.setUserPrivacy(users.getUserPrivacy());
 		userDetails.setUserName(users.getUserName());
-		userDetails.setPassword(users.getPassword());
+		userDetails.setPassword(String.copyValueOf(users.getPassword()));
 		userDetails.setUserSocialAccounts(users.isUserSocialAccounts());
 		userDetails.setEmail(users.getEmail());
 		userDetails.setUserBio(users.getUserBio());
@@ -134,7 +134,7 @@ public class UserDetails {
 		users.setUserSocialAccounts(hasUserSocialAccounts);
 		users.setEmail(email);
 		users.setUserBio(userBio);
-		users.setPassword(password);
+		users.setPassword(password.toCharArray());
 		users.setUserName(userName);
 		users.setProfilePicUrl(profilePicUrl);
 		return users;

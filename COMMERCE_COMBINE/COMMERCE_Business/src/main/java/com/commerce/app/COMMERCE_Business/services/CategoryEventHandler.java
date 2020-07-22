@@ -31,7 +31,7 @@ import com.mongodb.WriteResult;
 
 
 @Service("categoryService")
-@ComponentScan("com.sthuf.app.STHUF_Domain.repository")
+@ComponentScan("com.commerce.app.COMMERCE_Domain.repository")
 public class CategoryEventHandler implements CatergoryService{
 
 	private static Logger LOG = LoggerFactory.getLogger(CategoryEventHandler.class);

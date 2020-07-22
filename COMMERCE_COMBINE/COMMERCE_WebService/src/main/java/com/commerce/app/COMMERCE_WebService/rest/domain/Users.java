@@ -33,7 +33,7 @@ public class Users implements Serializable{
 	private String userName;
 	
 	@JsonProperty(value="metaPsd")
-	private String password;
+	private char[] password;
 	
 	@JsonProperty(value="userSocialAccounts")
 	private boolean userSocialAccounts;
@@ -99,11 +99,11 @@ public class Users implements Serializable{
 		this.userName = userName;
 	}
 
-	public String getPassword() {
+	public char[] getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(char[] password) {
 		this.password = password;
 	}
 

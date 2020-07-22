@@ -17,7 +17,7 @@ import com.commerce.app.COMMERCE_Domain.domain.InventoryNotes;
 import com.commerce.app.COMMERCE_Domain.repository.NotesRepository;
 
 @Service("notesService")
-@ComponentScan("com.sthuf.app.STHUF_Domain.repository")
+@ComponentScan("com.commerce.app.COMMERCE_Domain.repository")
 public class NotesEventHandler implements NotesService{
 	
 	private static Logger LOG = LoggerFactory.getLogger(NotesEventHandler.class);
