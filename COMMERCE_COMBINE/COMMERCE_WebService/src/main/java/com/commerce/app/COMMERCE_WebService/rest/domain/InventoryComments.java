@@ -14,12 +14,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonAutoDetect
 public class InventoryComments implements Serializable{
 
-	@JsonProperty(value="position")
-	private int position;
-	
-	@JsonProperty(value="formula")
-	private String formula;
-	
 	@JsonProperty(value="inventoryCommentsId")
 	private int inventoryCommentsId;
 	
@@ -55,30 +49,7 @@ public class InventoryComments implements Serializable{
 		return inventoryComments;
 		
 	}
-	
-	public ArrayList<String> appVerify(){
-		ArrayList<String> appValues = new ArrayList<String>();
-		appValues.add(formula);
-		appValues.add(String.valueOf(position));
-		return appValues;
-		
-	}
 
-	public int getPosition() {
-		return position;
-	}
-
-	public void setPosition(int position) {
-		this.position = position;
-	}
-
-	public String getFormula() {
-		return formula;
-	}
-
-	public void setFormula(String formula) {
-		this.formula = formula;
-	}
 
 	public int getInventoryCommentsId() {
 		return inventoryCommentsId;

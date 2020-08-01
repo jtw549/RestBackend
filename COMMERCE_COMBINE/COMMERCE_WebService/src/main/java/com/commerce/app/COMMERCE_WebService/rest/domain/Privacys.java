@@ -7,10 +7,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Privacys implements Serializable{
 	
-	private int position;
-	
-	private String formula;
-	
 	private int userId;
 	
 	private int privacyId;

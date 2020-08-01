@@ -22,12 +22,6 @@ public class UserCategories implements Serializable{
 	@JsonProperty(value="categoryName")
 	private String categoryName;
 	
-	@JsonProperty(value="position")
-	private int position;
-	
-	@JsonProperty(value="formula")
-	private String formula;
-	
 	@JsonProperty(value="userCategoriesId")
 	private int userCategoriesId;
 	
@@ -58,21 +52,6 @@ public class UserCategories implements Serializable{
 		this.categoryName = categoryName;
 	}
 
-	public int getPosition() {
-		return position;
-	}
-
-	public void setPosition(int position) {
-		this.position = position;
-	}
-
-	public String getFormula() {
-		return formula;
-	}
-
-	public void setFormula(String formula) {
-		this.formula = formula;
-	}
 
 	public int getUserCategoriesId() {
 		return userCategoriesId;
@@ -128,13 +107,6 @@ public class UserCategories implements Serializable{
 		userCategories.userCategoriesList = categoryDetails.getCategories();
 		return userCategories;
 		
-	}
-	
-	public ArrayList<String> appVerify(){
-		ArrayList<String> appValues = new ArrayList<String>();
-		appValues.add(formula);
-		appValues.add(String.valueOf(position));
-		return appValues;
 	}
 	
 }

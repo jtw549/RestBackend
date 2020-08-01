@@ -8,9 +8,6 @@ import com.commerce.app.COMMERCE_Business.events.Friends.FriendsDetails;
 
 @XmlRootElement
 public class Friends {
-	private int position;
-	
-	private String formula;
 	
 	private int userId;
 	
@@ -29,11 +26,12 @@ public class Friends {
 		friends.userId=friendsDetails.getUserId();
 		return friends;
 	}
-	public ArrayList<String> appVerify(){
+	//Changing to use JWT
+	/*public ArrayList<String> appVerify(){
 		ArrayList<String> appValues = new ArrayList<String>();
 		appValues.add(formula);
 		appValues.add(String.valueOf(position));
 		return appValues;
 		
-	}
+	}*/
 }

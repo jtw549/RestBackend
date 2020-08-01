@@ -12,13 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @XmlRootElement
 @JsonAutoDetect
 public class InventoryWarranty implements Serializable{
-	
-	@JsonProperty(value="position")
-	private int position;
-	
-	@JsonProperty(value="formula")
-	private String formula;
-	
+
 	@JsonProperty(value="inventoryWarrantyId")
 	private int inventoryWarrantyId;
 	
@@ -78,29 +72,6 @@ public class InventoryWarranty implements Serializable{
 	}
 	
 	
-	public ArrayList<String> appVerify(){
-		ArrayList<String> appValues = new ArrayList<String>();
-		appValues.add(formula);
-		appValues.add(String.valueOf(position));
-		return appValues;
-	}
-
-	public int getPosition() {
-		return position;
-	}
-
-	public void setPosition(int position) {
-		this.position = position;
-	}
-
-	public String getFormula() {
-		return formula;
-	}
-
-	public void setFormula(String formula) {
-		this.formula = formula;
-	}
-
 	public int getInventoryWarrantyId() {
 		return inventoryWarrantyId;
 	}

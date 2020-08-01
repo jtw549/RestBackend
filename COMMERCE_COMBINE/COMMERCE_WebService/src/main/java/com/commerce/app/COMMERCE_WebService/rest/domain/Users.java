@@ -14,12 +14,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonAutoDetect
 public class Users implements Serializable{
 
-	@JsonProperty(value="position")
-	private int position;
-	
-	@JsonProperty(value="formula")
-	private String formula;
-	
 	@JsonProperty(value="userId")
 	private int userId;
 	
@@ -51,22 +45,6 @@ public class Users implements Serializable{
 	private String profilePicUrl;
 	
 	
-	public int getPosition() {
-		return position;
-	}
-
-	public void setPosition(int position) {
-		this.position = position;
-	}
-
-	public String getFormula() {
-		return formula;
-	}
-
-	public void setFormula(String formula) {
-		this.formula = formula;
-	}
-
 	public int getUserId() {
 		return userId;
 	}
@@ -175,14 +153,6 @@ public class Users implements Serializable{
 		users.password= userDetails.getPassword();
 		users.userName=userDetails.getUserName();
 		return users;
-	}
-	
-	public ArrayList<String> appVerify(){
-		ArrayList<String> appValues = new ArrayList<String>();
-		appValues.add(formula);
-		appValues.add(String.valueOf(position));
-		return appValues;
-		
 	}
 	
 }

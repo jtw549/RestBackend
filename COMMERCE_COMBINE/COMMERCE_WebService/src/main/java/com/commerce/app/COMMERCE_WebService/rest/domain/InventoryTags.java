@@ -9,10 +9,6 @@ import com.commerce.app.COMMERCE_Business.events.Tags.TagDetails;
 
 @XmlRootElement
 public class InventoryTags implements Serializable{
-
-	private int position;
-	
-	private String formula;
 	
 	private int inventoryTagsId;
 	
@@ -38,13 +34,5 @@ public class InventoryTags implements Serializable{
 		inventoryTags.userId=tagDetails.getUserId();
 		inventoryTags.tagName=tagDetails.getTagName();
 		return inventoryTags;
-	}
-	
-	public ArrayList<String> appVerify(){
-		ArrayList<String> appValues = new ArrayList<String>();
-		appValues.add(formula);
-		appValues.add(String.valueOf(position));
-		return appValues;
-		
 	}
 }

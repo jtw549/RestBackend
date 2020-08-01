@@ -16,18 +16,16 @@ public class LoginEverythingDomains implements Serializable{
 	@JsonProperty(value="users")
 	private com.commerce.app.COMMERCE_Domain.domain.Users2 users2;
 	
-	@JsonProperty(value="position")
-	private int position;
 	
 	//@JsonProperty(value="items")
-	//private ArrayList<com.sthuf.app.STHUF_Domain.domain.Inventories> usersInventories;
+	//private ArrayList<com.commerce.app.COMMERCE_Domain.domain.Inventories> usersInventories;
 	
-	//private ArrayList<com.sthuf.app.STHUF_Domain.domain.Messages> usersMessages;
+	//private ArrayList<com.commerce.app.SCOMMERCE_Domain.domain.Messages> usersMessages;
 	
 	//@JsonProperty(value="UserCategory")
 	//private UserCategories usersCategories;
 	
-	//private ArrayList<com.sthuf.app.STHUF_Domain.domain.Friends> usersFriends;
+	//private ArrayList<com.commerce.app.COMMERCE_Domain.domain.Friends> usersFriends;
 	
 	@JsonProperty(value="categories")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.Categories> Categories;
@@ -42,20 +40,12 @@ public class LoginEverythingDomains implements Serializable{
 	}
 
 
-	public int getPosition() {
-		return position;
-	}
-
-	public void setPosition(int position) {
-		this.position = position;
-	}
-
-	/*public ArrayList<com.sthuf.app.STHUF_Domain.domain.Inventories> getUsersInventories() {
+	/*public ArrayList<com.commerce.app.COMMERCE_Domain.domain.Inventories> getUsersInventories() {
 		return usersInventories;
 	}
 
 	public void setUsersInventories(
-			ArrayList<com.sthuf.app.STHUF_Domain.domain.Inventories> usersInventories) {
+			ArrayList<com.commerce.app.COMMERCE_Domain.domain.Inventories> usersInventories) {
 		this.usersInventories = usersInventories;
 	}
 

@@ -10,9 +10,6 @@ import com.commerce.app.COMMERCE_Business.events.Messages.MessagesDetails;
 @XmlRootElement
 
 public class Messages implements Serializable{
-	private int position;
-	
-	private String formula;
 	
 	private int userId;
 	
@@ -28,12 +25,5 @@ public class Messages implements Serializable{
 		Messages messages = new Messages();
 		
 		return messages;
-	}
-	
-	public ArrayList<String> appVerify(){
-		ArrayList<String> appValues = new ArrayList<String>();
-		appValues.add(formula);
-		appValues.add(String.valueOf(position));
-		return appValues;
 	}
 }
