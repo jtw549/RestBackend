@@ -24,7 +24,7 @@
     </dependencies>
 
     <build>
-        <!-- <plugins>
+         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -32,9 +32,9 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <compilerArguments>
+                   <!--  <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
-                    </compilerArguments>
+                    </compilerArguments> -->
                 </configuration>
             </plugin>
             <plugin>
@@ -70,7 +70,7 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins> -->
+        </plugins>
     </build>
 
   

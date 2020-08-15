@@ -16,7 +16,7 @@ public class UserDetails {
 	
 	private String userName;
 	
-	private String password;
+	private char[] password;
 	
 	private boolean hasUserSocialAccounts;
 	
@@ -86,11 +86,11 @@ public class UserDetails {
 		this.userName = userName;
 	}
 
-	public String getPassword() {
+	public char[] getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(char[] password) {
 		this.password = password;
 	}
 
@@ -117,7 +117,7 @@ public class UserDetails {
 		userDetails.setLastName(users.getLastName());
 		userDetails.setUserPrivacy(users.getUserPrivacy());
 		userDetails.setUserName(users.getUserName());
-		userDetails.setPassword(String.copyValueOf(users.getPassword()));
+		userDetails.setPassword(password.toCharArray());
 		userDetails.setUserSocialAccounts(users.isUserSocialAccounts());
 		userDetails.setEmail(users.getEmail());
 		userDetails.setUserBio(users.getUserBio());
@@ -134,7 +134,7 @@ public class UserDetails {
 		users.setUserSocialAccounts(hasUserSocialAccounts);
 		users.setEmail(email);
 		users.setUserBio(userBio);
-		users.setPassword(password.toCharArray());
+		users.setPassword(String.valueOf(users.getPassword()));
 		users.setUserName(userName);
 		users.setProfilePicUrl(profilePicUrl);
 		return users;
