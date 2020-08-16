@@ -9,37 +9,49 @@ import com.commerce.app.COMMERCE_Business.events.Warranty.WarrantyDetails;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @XmlRootElement
 @JsonAutoDetect
 public class InventoryWarranty implements Serializable{
 
+	@ApiModelProperty(notes = "Inventory warranty id",name="inventoryWarrantyId",required=true,value="test inventory warranty id")
 	@JsonProperty(value="inventoryWarrantyId")
 	private int inventoryWarrantyId;
 	
+	@ApiModelProperty(notes = "Inventory warranty associated with inventory id",name="inventoryId",required=true,value="test inventory warranty inventory id")
 	@JsonProperty(value="inventoryId")
 	private int inventoryId;
 	
+	@ApiModelProperty(notes = "Inventory warranty issuer",name="issuer",required=true,value="test inventory warranty issuer")
 	@JsonProperty(value="issuer")
 	private String issuer;
 	
+	@ApiModelProperty(notes = "Inventory warranty length",name="length",required=true,value="test inventory warranty length")
 	@JsonProperty(value="length")
 	private int length;
 	
+	@ApiModelProperty(notes = "Inventory warranty type",name="type",required=true,value="test inventory warranty type")
 	@JsonProperty(value="type")
 	private String type;
 	
+	@ApiModelProperty(notes = "Inventory warranty contact address",name="contactAddress",required=true,value="test inventory warranty contact address")
 	@JsonProperty(value="contactAddress")
 	private com.commerce.app.COMMERCE_Domain.domain.Address contactAddress;
 	
+	@ApiModelProperty(notes = "Inventory warranty contact phone number",name="contactPhone",required=true,value="test inventory warranty contact phone number")
 	@JsonProperty(value="contactPhone")
 	private String contactPhone;
 	
+	@ApiModelProperty(notes = "Inventory warranty notes",name="notes",required=true,value="test inventory warranty notes")
 	@JsonProperty(value="notes")
 	private String notes;
 	
+	@ApiModelProperty(notes = "Inventory warranty user id associated with the warranties",name="userId",required=true,value="test inventory warranty user id")
 	@JsonProperty(value="userId")
 	private int userId;
 	
+	@ApiModelProperty(notes = "Inventory warranty list associated with inventory",name="inventoryWarrantyList",required=true,value="test inventory warranty list")
 	@JsonProperty(value="inventoryWarrantyList")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.InventoryWarranty> inventoryWarrantyList;
 	

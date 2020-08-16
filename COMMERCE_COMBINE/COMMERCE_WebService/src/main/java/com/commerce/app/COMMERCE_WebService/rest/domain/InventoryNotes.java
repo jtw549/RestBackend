@@ -9,28 +9,37 @@ import com.commerce.app.COMMERCE_Business.events.Notes.NotesDetails;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @XmlRootElement
 @JsonAutoDetect
 public class InventoryNotes implements Serializable{
 	
+	@ApiModelProperty(notes = "Inventory notes id",name="inventoryNotesId",required=true,value="test inventory notes id")
 	@JsonProperty(value="inventoryNotesId")
 	private int inventoryNotesId;
 	
+	@ApiModelProperty(notes = "Inventory id",name="inventoryId",required=true,value="test inventory id")
 	@JsonProperty(value="inventoryId")
 	private int inventoryId;
 	
+	@ApiModelProperty(notes = "Inventory note title",name="title",required=true,value="test inventory note title")
 	@JsonProperty(value="title")
 	private String title;
 	
+	@ApiModelProperty(notes = "Inventory note date",name="createDate",required=true,value="test inventory note date")
 	@JsonProperty(value="createDate")
 	private String createDate;
 	
+	@ApiModelProperty(notes = "Inventory note",name="noteSummary",required=true,value="test inventory note")
 	@JsonProperty(value="noteSummary")
 	private String noteSummary;
 	
+	@ApiModelProperty(notes = "Inventory notes user id associated with the note",name="userId",required=true,value="test inventory note user id")
 	@JsonProperty(value="userId")
 	private int userId;
 	
+	@ApiModelProperty(notes = "List of inventory notes",name="inventoryNotesList",required=true,value="test inventory note list")
 	@JsonProperty(value="inventoryNotesList")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.InventoryNotes> inventoryNotesList;
 	

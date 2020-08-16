@@ -4,11 +4,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.commerce.app.COMMERCE_Business.events.Friends.FriendsDetails;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @XmlRootElement
 public class Friends {
 	
+	@ApiModelProperty(notes = "User Id",name="userId",required=true,value="test user Id")
 	private int userId;
-	
+	@ApiModelProperty(notes = "Friend Id",name="friendId",required=true,value="test friend Id")
 	private int friendId;
 	
 	public FriendsDetails toFriendsDetails() {
@@ -24,12 +27,5 @@ public class Friends {
 		friends.userId=friendsDetails.getUserId();
 		return friends;
 	}
-	//Changing to use JWT
-	/*public ArrayList<String> appVerify(){
-		ArrayList<String> appValues = new ArrayList<String>();
-		appValues.add(formula);
-		appValues.add(String.valueOf(position));
-		return appValues;
-		
-	}*/
+	//use JWT
 }

@@ -11,33 +11,43 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonAutoDetect
 public class Users implements Serializable{
 
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userId")
 	private int userId;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="firstName")
 	private String firstName;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="lastName")
 	private String lastName;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userName")
 	private String userName;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="metaPsd")
 	private char[] password;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userSocialAccounts")
 	private boolean userSocialAccounts;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userPrivacy")
 	private String userPrivacy;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="email")
 	private String email;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userBio")
 	private String userBio;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="profilePicUrl")
 	private String profilePicUrl;
 	

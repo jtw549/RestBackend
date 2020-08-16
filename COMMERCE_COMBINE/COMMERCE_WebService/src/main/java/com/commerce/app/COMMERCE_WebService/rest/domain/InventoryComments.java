@@ -9,25 +9,33 @@ import com.commerce.app.COMMERCE_Business.events.Comments.CommentsDetails;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @XmlRootElement
 @JsonAutoDetect
 public class InventoryComments implements Serializable{
 
+	@ApiModelProperty(notes = "Inventory Comments Id",name="inventoryCommentsId",required=true,value="test inventory Comments Id")
 	@JsonProperty(value="inventoryCommentsId")
 	private int inventoryCommentsId;
 	
+	@ApiModelProperty(notes = "Inventory Id where the comment is used on",name="inventoryId",required=true,value="test inventory Id")
 	@JsonProperty(value="inventoryId")
 	private int inventoryId;
 	
+	@ApiModelProperty(notes = "Commentor User Id associated with comment",name="commentorUserId",required=true,value="test commentor User Id")
 	@JsonProperty(value="commentorUserId")
 	private int commentorUserId;
 	
+	@ApiModelProperty(notes = "Comment",name="comment",required=true,value="test comment")
 	@JsonProperty(value="comment")
 	private String comment;
 	
+	@ApiModelProperty(notes = "Comment Date",name="commentDate",required=true,value="test comment Date")
 	@JsonProperty(value="commentDate")
 	private String commentDate;
 	
+	@ApiModelProperty(notes = "Inventory Comments List",name="inventoryCommentsList",required=true,value="test list Inventory Comments")
 	@JsonProperty(value="inventoryCommentsList")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.InventoryComments> inventoryCommentsList;
 	

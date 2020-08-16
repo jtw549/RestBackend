@@ -5,12 +5,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.commerce.app.COMMERCE_Business.events.Category.CategoryDetails;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @SuppressWarnings("serial")
 @XmlRootElement
 public class Categories implements Serializable{
-	//should probably already be on the front end
-	private int categoriesId;
 	
+	@ApiModelProperty(notes = "Categories Id",name="categoriesId",required=true,value="test categories Id")
+	private int categoriesId;
+	@ApiModelProperty(notes = "name",name="name",required=true,value="test name")
 	private String name;
 	
 	public CategoryDetails toCategoryDetails() {

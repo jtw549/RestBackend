@@ -14,78 +14,103 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonAutoDetect
 public class Inventories implements Serializable{
 
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userId")
 	private int userId;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="inventoryId")
 	private int inventoryId;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="categoryId")
 	private int categoryId;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userCategoryId")
 	private int userCategoryId;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="make")
 	private String make;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="name")
 	private String name;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="serialNumber")
 	private String serialNumber;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="seller")
 	private String seller;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="price")
 	private String price;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="purchaseDate")
 	private String purchaseDate;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="model")
 	private String model;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="quantity")
 	private int quantity;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="conditions")
 	private ArrayList<String> conditions; 
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="likes")
 	private int likes;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="privacy")
 	private String privacy;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="shareLink")
 	private String shareLink;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="shareEmbed")
 	private String shareEmbed;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="inventoryWarranty")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.InventoryWarranty> inventoryWarranty;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="inventoryComments")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.InventoryComments> inventoryComments;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="inventoryNotes")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.InventoryNotes> inventoryNotes;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="inventoryTags")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.InventoryTags> inventoryTags;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="inventoryMedias")
 	private ArrayList<InventoryMedia> inventoryMedias;
 
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="updatedDate")
 	private String updatedDate;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="createdDate")
 	private String createdDate;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="inventoriesList")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.Inventories> inventoriesList;
 	

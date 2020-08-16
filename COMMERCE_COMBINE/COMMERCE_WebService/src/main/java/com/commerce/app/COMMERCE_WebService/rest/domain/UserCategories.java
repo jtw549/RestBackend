@@ -9,26 +9,32 @@ import com.commerce.app.COMMERCE_Business.events.Category.CategoryDetails;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @XmlRootElement
 @JsonAutoDetect
 public class UserCategories implements Serializable{
-	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userId")
 	private int userId;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="categoryName")
 	private String categoryName;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userCategoriesId")
 	private int userCategoriesId;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="dateAdded")
 	private String dateAdded;
 	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="associatedCategoryId")
 	private int associatedCategoryId;
 	
-	
+	//@ApiModelProperty(notes = "User gotten from login",name="userId",required=true,value="test user")
 	@JsonProperty(value="userCategoriesList")
 	private ArrayList<com.commerce.app.COMMERCE_Domain.domain.UserCategoryArray> userCategoriesList;
 	
