@@ -1,12 +1,6 @@
 package com.commerce.app.COMMERCE_Domain.config;
 
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.MongoDbFactory;
-import org.springframework.data.mongodb.core.MongoTemplate;
- 
-import com.mongodb.MongoClient;
  
 @Configuration
 public class SpringMongoConfig1 {

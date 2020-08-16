@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import com.commerce.app.COMMERCE_Domain.config.SpringMongoConfig1;
 import com.commerce.app.COMMERCE_Domain.domain.Inventories;
-import com.commerce.app.COMMERCE_Domain.domain.InventoryTags;
 
 @Repository
 public class ItemsRepositoryImpl implements ItemsRepository{

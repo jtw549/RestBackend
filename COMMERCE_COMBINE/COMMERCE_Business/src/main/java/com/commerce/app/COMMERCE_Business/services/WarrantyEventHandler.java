@@ -6,15 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import com.commerce.app.COMMERCE_Business.events.Warranty.*;
-import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 import com.commerce.app.COMMERCE_Domain.domain.InventoryWarranty;
-import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.repository.WarrantyRepository;
 
 @Service("warrantyService")

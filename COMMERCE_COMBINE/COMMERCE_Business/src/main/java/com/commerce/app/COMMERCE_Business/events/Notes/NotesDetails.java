@@ -1,6 +1,5 @@
 package com.commerce.app.COMMERCE_Business.events.Notes;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
 import com.commerce.app.COMMERCE_Domain.domain.InventoryNotes;

@@ -2,14 +2,12 @@ package com.sthuf.rest.controller.fixtures;
 
 import java.util.Arrays;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
-import com.commerce.app.COMMERCE_WebService.rest.domain.Inventories;
 import com.commerce.app.COMMERCE_WebService.rest.domain.InventoryNotes;
 
 public class NotesTest {

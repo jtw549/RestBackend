@@ -2,8 +2,6 @@ package com.commerce.app.COMMERCE_WebService.rest.domain;
 
 import java.io.File;
 import java.io.Serializable;
-import java.util.ArrayList;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.commerce.app.COMMERCE_Business.events.Media.MediaDetails;

@@ -2,7 +2,6 @@ package com.sthuf.rest.controller.fixtures;
 
 import java.util.Arrays;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

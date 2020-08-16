@@ -3,7 +3,6 @@ package com.commerce.app.COMMERCE_Business.events.Category;
 import java.util.ArrayList;
 
 import com.commerce.app.COMMERCE_Business.events.DeletedEvent;
-import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategoryArray;
 
 public class CategoryDeletedEvent extends DeletedEvent {

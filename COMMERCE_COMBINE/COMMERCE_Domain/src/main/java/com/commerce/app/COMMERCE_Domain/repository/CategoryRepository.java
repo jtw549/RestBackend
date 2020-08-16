@@ -1,7 +1,5 @@
 package com.commerce.app.COMMERCE_Domain.repository;
 
-import java.util.ArrayList;
-
 import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 
 public interface CategoryRepository{

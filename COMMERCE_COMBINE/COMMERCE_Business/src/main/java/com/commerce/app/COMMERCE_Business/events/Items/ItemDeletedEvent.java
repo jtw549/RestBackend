@@ -1,9 +1,6 @@
 package com.commerce.app.COMMERCE_Business.events.Items;
 
-import java.util.ArrayList;
-
 import com.commerce.app.COMMERCE_Business.events.DeletedEvent;
-import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 
 public class ItemDeletedEvent extends DeletedEvent {
 	

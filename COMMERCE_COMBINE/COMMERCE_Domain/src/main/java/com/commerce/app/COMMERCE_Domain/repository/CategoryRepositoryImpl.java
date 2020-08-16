@@ -5,22 +5,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.neo4j.cypher.internal.compiler.v2_1.ast.rewriters.isolateAggregation;
-import org.neo4j.cypher.internal.compiler.v2_1.docbuilders.internalDocBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
-import org.springframework.expression.spel.support.BooleanTypedValue;
 import org.springframework.stereotype.Repository;
 
 import com.commerce.app.COMMERCE_Domain.config.SpringMongoConfig1;
-import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategoryArray;
-import com.mongodb.WriteResult;
 
 @Repository
 public class CategoryRepositoryImpl implements CategoryRepository{

@@ -1,18 +1,12 @@
 package com.commerce.app.COMMERCE_Business.services;
 
-import java.util.ArrayList;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.commerce.app.COMMERCE_Business.events.Category.AddCategoryEvent;
@@ -23,11 +17,8 @@ import com.commerce.app.COMMERCE_Business.events.Category.CategoryUpdatedEvent;
 import com.commerce.app.COMMERCE_Business.events.Category.DeleteCategoryEvent;
 import com.commerce.app.COMMERCE_Business.events.Category.GetCategoryEvent;
 import com.commerce.app.COMMERCE_Business.events.Category.UpdateCategoryEvent;
-import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
-import com.commerce.app.COMMERCE_Domain.domain.UserCategoryArray;
 import com.commerce.app.COMMERCE_Domain.repository.CategoryRepository;
-import com.mongodb.WriteResult;
 
 
 @Service("categoryService")

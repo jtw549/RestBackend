@@ -1,7 +1,5 @@
 package com.commerce.app.COMMERCE_Business.services;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -10,12 +8,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import com.commerce.app.COMMERCE_Business.events.Users.*;
-import com.commerce.app.COMMERCE_Domain.domain.Categories;
-import com.commerce.app.COMMERCE_Domain.domain.Friends;
-import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 import com.commerce.app.COMMERCE_Domain.domain.LoginEverythingDomain;
-import com.commerce.app.COMMERCE_Domain.domain.Messages;
-import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.domain.Users;
 import com.commerce.app.COMMERCE_Domain.repository.UserRepository;
 

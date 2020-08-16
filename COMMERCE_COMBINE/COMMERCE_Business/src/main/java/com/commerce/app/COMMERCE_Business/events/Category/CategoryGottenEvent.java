@@ -1,10 +1,7 @@
 package com.commerce.app.COMMERCE_Business.events.Category;
 
-import java.util.ArrayList;
-
 import com.commerce.app.COMMERCE_Business.events.ReadEvent;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
-import com.commerce.app.COMMERCE_Domain.domain.UserCategoryArray;
 
 public class CategoryGottenEvent extends ReadEvent{
 /*	"categories": {

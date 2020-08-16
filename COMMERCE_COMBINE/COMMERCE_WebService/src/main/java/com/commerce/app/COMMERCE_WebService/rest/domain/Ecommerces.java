@@ -1,8 +1,6 @@
 package com.commerce.app.COMMERCE_WebService.rest.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement

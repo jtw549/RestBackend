@@ -1,7 +1,6 @@
 package com.commerce.app.COMMERCE_WebService.rest.domain;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlRootElement;

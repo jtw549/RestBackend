@@ -1,6 +1,5 @@
 package com.commerce.app.COMMERCE_Business.events.Comments;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import com.commerce.app.COMMERCE_Domain.domain.InventoryComments;

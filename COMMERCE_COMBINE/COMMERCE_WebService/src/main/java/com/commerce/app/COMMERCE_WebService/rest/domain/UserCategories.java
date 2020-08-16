@@ -1,12 +1,9 @@
 package com.commerce.app.COMMERCE_WebService.rest.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.springframework.beans.factory.annotation.Required;
 
 import com.commerce.app.COMMERCE_Business.events.Category.CategoryDetails;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;

@@ -3,8 +3,6 @@ package com.commerce.app.COMMERCE_Domain.repository;
 import java.io.IOException;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;

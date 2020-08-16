@@ -7,14 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.commerce.app.COMMERCE_Business.events.AppAuth.AppAuthenticatedEvent;
-import com.commerce.app.COMMERCE_Business.events.AppAuth.AuthenticateAppEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.DeleteUserEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.GetUserAccountInfoEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.LoginUserEvent;
@@ -25,14 +22,18 @@ import com.commerce.app.COMMERCE_Business.events.Users.UserDeletedEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.UserLoggedInEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.UserRegisteredEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.UserUpdatedEvent;
-import com.commerce.app.COMMERCE_Business.services.AppAuthenticationService;
 import com.commerce.app.COMMERCE_Business.services.UsersService;
-import com.commerce.app.COMMERCE_WebService.rest.domain.LoginEverythingDomains;
 import com.commerce.app.COMMERCE_WebService.rest.domain.Users;
+import com.commerce.app.COMMERCE_WebService.rest.domain.LoginEverythingDomains;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 
-
-@Controller
+@Api(value = "UserRestController", description = "REST API for handling anything related to user")
+@RestController
 @RequestMapping("/api/action/users")
 @ComponentScan("com.commerce.app.COMMERCE_Business.services")
 public class UsersController {
@@ -42,17 +43,12 @@ public class UsersController {
     @Autowired
     private UsersService userService;
     
-   /* @Autowired
-    private AppAuthenticationService appAuthenticationService;*/
-	
-    @RequestMapping(value="/registerUser",method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE, headers="Accept=application/json")
+    @ApiOperation(value = "Register User and return user", response = Users.class, tags = "registerUsers")
+	@ApiResponses(value = { 
+	            @ApiResponse(code = 201, message = "Created")
+	           })
+    @RequestMapping(value="/registerUser",method = RequestMethod.PUT, consumes=MediaType.APPLICATION_JSON_VALUE, headers="Accept=application/json")
 	public ResponseEntity<Users> registerUser(@RequestBody Users users) {
-    	/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(users.appVerify()));
-    	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
-    	if (false == appAllowed) {
-    		return new ResponseEntity<Users>(users, HttpStatus.FORBIDDEN);
-    	}
-    	*/
     	UserRegisteredEvent registerUserEvent = userService.registerUser(new RegisterUserEvent(users.toUserDetails()));
     	Users newUsers = users.fromUserDetails(registerUserEvent.getUserDetails());
 		
@@ -60,13 +56,14 @@ public class UsersController {
 		
 	}
     
-    @RequestMapping(value="/updateUser",method = RequestMethod.PUT)
+    @ApiOperation(value = "Updates User and return updated user", response = Users.class, tags = "updateUsers")
+	@ApiResponses(value = { 
+	            @ApiResponse(code = 200, message = "Success|OK"),
+	            @ApiResponse(code = 401, message = "Not authorized"), 
+	            @ApiResponse(code = 403, message = "Forbidden"),
+	            @ApiResponse(code = 404, message = "Not Found") })
+    @RequestMapping(value="/updateUser",method = RequestMethod.POST)
 	public ResponseEntity<Users> updateUser(@RequestBody Users users) {
-    	/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(users.appVerify()));
-    	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
-    	if (false == appAllowed) {
-    		return new ResponseEntity<Users>(users, HttpStatus.FORBIDDEN);
-    	}*/
     	
     	UserUpdatedEvent updateUserEvent = userService.updateUser(new UpdateUserEvent(users.toUserDetails()));
 		Users updatedUsers = users.fromUserDetails(updateUserEvent.getUserDetails());
@@ -75,13 +72,14 @@ public class UsersController {
 		
 	}
     
+    @ApiOperation(value = "Delete User", response = Users.class, tags = "deleteUsers")
+	@ApiResponses(value = { 
+	            @ApiResponse(code = 200, message = "Success|OK"),
+	            @ApiResponse(code = 401, message = "Not authorized"), 
+	            @ApiResponse(code = 403, message = "Forbidden")
+	             })
     @RequestMapping(value="/deleteUser",method = RequestMethod.DELETE)
 	public ResponseEntity<Users> deleteUser(@RequestBody Users users) {
-    	/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(users.appVerify()));
-    	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
-    	if (false == appAllowed) {
-    		return new ResponseEntity<Users>(users, HttpStatus.FORBIDDEN);
-    	}*/
     	
     	UserDeletedEvent deleteUserEvent = userService.deleteUser(new DeleteUserEvent(users.toUserDetails()));
 		Users deletedUsers = users.fromUserDetails(deleteUserEvent.getUserDetails());
@@ -97,13 +95,14 @@ public class UsersController {
 		
 	}
     
+    @ApiOperation(value = "Get User account information", response = Users.class, tags = "getAccountInfoUsers")
+	@ApiResponses(value = { 
+	            @ApiResponse(code = 200, message = "Success|OK"),
+	            @ApiResponse(code = 401, message = "Not authorized"), 
+	            @ApiResponse(code = 403, message = "Forbidden"),
+	            @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value="/getAccountInfo",method = RequestMethod.GET)
 	public ResponseEntity<Users> getAccountInfo(@RequestBody Users users) {
-    	/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(users.appVerify()));
-    	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
-    	if (false == appAllowed) {
-    		return new ResponseEntity<Users>(users, HttpStatus.FORBIDDEN);
-    	}*/
     	
     	UserAccountInfoGottenEvent getUserAccountInfoEvent= userService.getAccountInfo(new GetUserAccountInfoEvent(users.toUserDetails()));
     	Users gotUsers = users.fromUserDetails(getUserAccountInfoEvent.getUserDetails());
@@ -112,14 +111,15 @@ public class UsersController {
 		
 	}
     
+    @ApiOperation(value = "Login User and return everything associated with the user", response = Users.class, tags = "loginUsers")
+	@ApiResponses(value = { 
+	            @ApiResponse(code = 200, message = "Success|OK"),
+	            @ApiResponse(code = 401, message = "Not authorized"), 
+	            @ApiResponse(code = 403, message = "Forbidden"),
+	            @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value="/login",method = RequestMethod.POST)
 	public ResponseEntity<LoginEverythingDomains> loginUser(@RequestBody Users users) {
     	LoginEverythingDomains login = new LoginEverythingDomains();
-    	/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(users.appVerify()));
-    	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
-    	if (false == appAllowed) {
-    		return new ResponseEntity<LoginEverythingDomains>(login, HttpStatus.FORBIDDEN);
-    	}*/
     	
     	UserLoggedInEvent loginUserEvent = userService.loginUser(new LoginUserEvent(users.toUserDetails()));
     	LoginEverythingDomains loginEverythingDomains = login.fromLoginEverythingDetails(loginUserEvent.getUserDetails());
@@ -128,14 +128,15 @@ public class UsersController {
 		
 	}
     
+    @ApiOperation(value = "Logout User", response = Users.class, tags = "logoutUsers")
+	@ApiResponses(value = { 
+	            @ApiResponse(code = 200, message = "Success|OK"),
+	            @ApiResponse(code = 401, message = "Not authorized"), 
+	            @ApiResponse(code = 403, message = "Forbidden"),
+	            @ApiResponse(code = 404, message = "Not Found") })
     @RequestMapping(value="/logout",method = RequestMethod.POST)
 	public ResponseEntity<Users> logoutUser(@RequestBody Users users) {
 		//how is this gonna work?
-    	/*AppAuthenticatedEvent appAuthenticatedEvent = appAuthenticationService.authenticateApp(new AuthenticateAppEvent(users.appVerify()));
-    	boolean appAllowed = appAuthenticatedEvent.isClientAllowed();
-    	if (false == appAllowed) {
-    		return new ResponseEntity<Users>(users, HttpStatus.FORBIDDEN);
-    	}*/
 		return new ResponseEntity<Users>(users,HttpStatus.OK);
 		
 	}

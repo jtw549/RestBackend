@@ -1,9 +1,7 @@
 package com.commerce.app.COMMERCE_Business.events.Category;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
-import com.commerce.app.COMMERCE_Domain.domain.Categories;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategoryArray;
 

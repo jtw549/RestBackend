@@ -1,12 +1,11 @@
 package com.commerce.app.COMMERCE_WebService.rest.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.commerce.app.COMMERCE_Business.events.Category.CategoryDetails;
 
+@SuppressWarnings("serial")
 @XmlRootElement
 public class Categories implements Serializable{
 	//should probably already be on the front end

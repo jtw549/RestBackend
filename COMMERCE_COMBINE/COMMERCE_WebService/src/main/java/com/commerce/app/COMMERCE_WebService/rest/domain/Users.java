@@ -1,9 +1,6 @@
 package com.commerce.app.COMMERCE_WebService.rest.domain;
 
-import java.awt.List;
 import java.io.Serializable;
-import java.util.ArrayList;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.commerce.app.COMMERCE_Business.events.Users.UserDetails;

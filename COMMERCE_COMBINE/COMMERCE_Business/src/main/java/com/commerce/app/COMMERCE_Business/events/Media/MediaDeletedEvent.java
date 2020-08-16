@@ -1,9 +1,6 @@
 package com.commerce.app.COMMERCE_Business.events.Media;
 
-import java.util.ArrayList;
-
 import com.commerce.app.COMMERCE_Business.events.DeletedEvent;
-import com.commerce.app.COMMERCE_Domain.domain.InventoryMedia;
 
 public class MediaDeletedEvent extends DeletedEvent{
 	

@@ -6,13 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import com.commerce.app.COMMERCE_Business.events.Notes.*;
-import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 import com.commerce.app.COMMERCE_Domain.domain.InventoryNotes;
 import com.commerce.app.COMMERCE_Domain.repository.NotesRepository;
 
