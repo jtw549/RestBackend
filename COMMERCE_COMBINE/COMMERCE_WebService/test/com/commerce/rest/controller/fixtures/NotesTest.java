@@ -1,4 +1,4 @@
-package com.sthuf.rest.controller.fixtures;
+package com.commerce.rest.controller.fixtures;
 
 import java.util.Arrays;
 
@@ -25,7 +25,7 @@ public class NotesTest {
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryNotes entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/notes/addNote",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/notes/addNote",
 	        requestEntity, InventoryNotes.class);
 
 	  }
@@ -42,7 +42,7 @@ public class NotesTest {
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryNotes entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/notes/deleteNote",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/notes/deleteNote",
 	        requestEntity, InventoryNotes.class);
 
 	  }
@@ -59,7 +59,7 @@ public class NotesTest {
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryNotes entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/notes/updateNote",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/notes/updateNote",
 	        requestEntity, InventoryNotes.class);
 
 	  }

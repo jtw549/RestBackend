@@ -22,12 +22,10 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
     configureSpringMvc(servletContext, rootContext);
 
-    //configureSpringSecurity(servletContext, rootContext);
   }
 
   private WebApplicationContext createRootContext(ServletContext servletContext) {
     AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
-    //rootContext.register(CoreConfig.class, SecurityConfig.class);
     rootContext.register(CoreConfig.class);
     rootContext.refresh();
 

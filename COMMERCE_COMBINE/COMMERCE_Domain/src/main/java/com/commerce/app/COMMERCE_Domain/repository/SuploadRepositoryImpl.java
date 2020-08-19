@@ -15,8 +15,8 @@ import com.amazonaws.services.s3.AmazonS3Client;
 public class SuploadRepositoryImpl implements SuploadRepository{
 
 	
-	private static String bucketImageName     = "sthuf-images";
-	private static String bucketVideoName     = "sthuf-videos";
+	private static String bucketImageName     = "commerce-images";
+	private static String bucketVideoName     = "commerce-videos";
 	
 	public String uploadMedia (String imageOrvideo,File file,String filename,long userid, long inventoryid) throws IOException {
         AmazonS3 s3client = new AmazonS3Client(new ProfileCredentialsProvider());

@@ -13,8 +13,8 @@ import com.amazonaws.services.s3.model.DeleteObjectRequest;
 @Repository
 public class SdeleteRepositoryImpl implements SdeleteRepository{
 
-		private static String bucketImageName     = "sthuf-images";
-		private static String bucketVideoName     = "sthuf-videos";
+		private static String bucketImageName     = "commerce-images";
+		private static String bucketVideoName     = "commerce-videos";
 	    
 	public String deleteMedia (String imageOrvideo,String keyName) throws IOException{
 		 AmazonS3 s3Client = new AmazonS3Client(new ProfileCredentialsProvider());

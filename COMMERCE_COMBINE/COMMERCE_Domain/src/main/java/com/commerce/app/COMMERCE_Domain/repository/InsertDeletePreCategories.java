@@ -11,8 +11,8 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
-import com.sthuf.app.STHUF_Domain.config.SpringMongoConfig1;
-import com.sthuf.app.STHUF_Domain.domain.Categories;*/
+import com.commerce.app.COMMERCE_Domain.config.SpringMongoConfig1;
+import com.commerce.app.COMMERCE_Domain.domain.Categories;*/
 
 
 public class InsertDeletePreCategories {

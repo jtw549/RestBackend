@@ -30,7 +30,6 @@ import com.commerce.app.COMMERCE_Business.events.Items.ItemDeletedEvent;
 import com.commerce.app.COMMERCE_Business.events.Items.ItemGottenEvent;
 import com.commerce.app.COMMERCE_Business.events.Items.ItemUpdatedEvent;
 import com.commerce.app.COMMERCE_Business.events.Items.UpdateItemEvent;
-import com.commerce.app.COMMERCE_Business.services.AppAuthenticationService;
 import com.commerce.app.COMMERCE_Business.services.InventoryService;
 import com.commerce.app.COMMERCE_WebService.rest.domain.Inventories;
 

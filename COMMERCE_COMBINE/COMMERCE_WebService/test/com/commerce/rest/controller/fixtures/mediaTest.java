@@ -1,4 +1,4 @@
-package com.sthuf.rest.controller.fixtures;
+package com.commerce.rest.controller.fixtures;
 
 import java.util.Arrays;
 
@@ -24,7 +24,7 @@ public class mediaTest {
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryMedia entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/media/addMedia",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/media/addMedia",
 	        requestEntity, InventoryMedia.class);
 
 	  }

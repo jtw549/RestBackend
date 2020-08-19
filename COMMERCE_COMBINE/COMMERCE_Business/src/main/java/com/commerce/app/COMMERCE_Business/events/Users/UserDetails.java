@@ -117,7 +117,7 @@ public class UserDetails {
 		userDetails.setLastName(users.getLastName());
 		userDetails.setUserPrivacy(users.getUserPrivacy());
 		userDetails.setUserName(users.getUserName());
-		userDetails.setPassword(password.toCharArray());
+		userDetails.setPassword(users.getPassword().toCharArray());
 		userDetails.setUserSocialAccounts(users.isUserSocialAccounts());
 		userDetails.setEmail(users.getEmail());
 		userDetails.setUserBio(users.getUserBio());

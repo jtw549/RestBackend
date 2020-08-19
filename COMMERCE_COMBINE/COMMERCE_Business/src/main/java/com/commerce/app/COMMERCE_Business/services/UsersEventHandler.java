@@ -28,7 +28,6 @@ public class UsersEventHandler implements UsersService{
 	public UserRegisteredEvent registerUser(RegisterUserEvent registerUserEvent) {
 		Users users = registerUserEvent.getUserDetails().fromUserDetails();
 		users = userRepository.registerUser(users);
-		
 		return new UserRegisteredEvent(users);
 	}
 	

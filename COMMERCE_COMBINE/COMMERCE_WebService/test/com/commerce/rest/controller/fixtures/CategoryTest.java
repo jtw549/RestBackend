@@ -1,4 +1,4 @@
-package com.sthuf.rest.controller.fixtures;
+package com.commerce.rest.controller.fixtures;
 
 import java.util.Arrays;
 
@@ -29,7 +29,7 @@ public class CategoryTest {
 	    		createUser(),headers);*/
 
 	    UserCategories entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/categories/addCategory",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/categories/addCategory",
 	        requestEntity, UserCategories.class);
 
 	    
@@ -58,7 +58,7 @@ public class CategoryTest {
 	    		 /*   HttpEntity<Users> requestEntity = new HttpEntity<Users>(
 	    		createUser(),headers);*/
 	    UserCategories entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/categories/deleteCategory",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/categories/deleteCategory",
 	        requestEntity, UserCategories.class);
 
 	    
@@ -88,7 +88,7 @@ public class CategoryTest {
 	    		createUser(),headers);*/
 
 	    UserCategories entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/categories/updateCategory",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/categories/updateCategory",
 	        requestEntity, UserCategories.class);
 
 	    

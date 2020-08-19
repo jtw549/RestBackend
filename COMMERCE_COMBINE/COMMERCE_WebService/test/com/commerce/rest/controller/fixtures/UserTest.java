@@ -1,4 +1,4 @@
-package com.sthuf.rest.controller.fixtures;
+package com.commerce.rest.controller.fixtures;
 
 import java.util.Arrays;
 
@@ -28,7 +28,7 @@ public class UserTest {
 	    		createUser(),headers);*/
 
 	    Users entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/users/registerUser",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/users/registerUser",
 	        requestEntity, Users.class);
 
 	    
@@ -57,7 +57,7 @@ public class UserTest {
 		    		createUser(),headers);*/
 
 		    Users entity = template.postForObject(
-		        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/users/login",
+		        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/users/login",
 		        requestEntity, Users.class);
 
 		    

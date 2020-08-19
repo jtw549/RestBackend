@@ -1,12 +1,15 @@
 package com.commerce.app.COMMERCE_Business.services;
 
+import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.commerce.app.COMMERCE_Business.events.Category.AddCategoryEvent;
@@ -20,7 +23,8 @@ import com.commerce.app.COMMERCE_Business.events.Category.UpdateCategoryEvent;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.repository.CategoryRepository;
 
-
+@Aspect
+@EnableAspectJAutoProxy
 @Service("categoryService")
 @ComponentScan("com.commerce.app.COMMERCE_Domain.repository")
 public class CategoryEventHandler implements CatergoryService{
@@ -33,6 +37,7 @@ public class CategoryEventHandler implements CatergoryService{
 	private CategoryRepository categoryRepository;
 	
 	Query searchUserCategoryQuery;
+
 	
 	@Override
 	public CategoryAddedEvent addCategory(AddCategoryEvent addCategoryEvent) {

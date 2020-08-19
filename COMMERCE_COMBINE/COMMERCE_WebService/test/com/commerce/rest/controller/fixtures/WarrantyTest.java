@@ -1,4 +1,4 @@
-package com.sthuf.rest.controller.fixtures;
+package com.commerce.rest.controller.fixtures;
 
 import java.util.Arrays;
 
@@ -24,7 +24,7 @@ public class WarrantyTest {
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryWarranty entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/warranties/addWarranty",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/warranties/addWarranty",
 	        requestEntity, InventoryWarranty.class);
 
 	  }
@@ -41,7 +41,7 @@ public class WarrantyTest {
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryWarranty entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/warranties/deleteWarranty",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/warranties/deleteWarranty",
 	        requestEntity, InventoryWarranty.class);
 
 	  }
@@ -58,7 +58,7 @@ public class WarrantyTest {
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryWarranty entity = template.postForObject(
-	        "http://localhost:8081/STHUF_WebService-3.0-SNAPSHOT/api/action/warranties/updateWarranty",
+	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/warranties/updateWarranty",
 	        requestEntity, InventoryWarranty.class);
 
 	  }
