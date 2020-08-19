@@ -55,10 +55,5 @@ public class WebAppInitializer implements WebApplicationInitializer {
     }
   }
 
- /* private void configureSpringSecurity(ServletContext servletContext, WebApplicationContext rootContext) {
-    FilterRegistration.Dynamic springSecurity = servletContext.addFilter("springSecurityFilterChain",
-        new DelegatingFilterProxy("springSecurityFilterChain", rootContext));
-    springSecurity.addMappingForUrlPatterns(null, true, "/*");
-  }*/
 }
 

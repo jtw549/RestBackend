@@ -2,6 +2,7 @@ package com.commerce.rest.controller.fixtures;
 
 import java.util.Arrays;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.HttpEntity;
@@ -9,18 +10,28 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
+import com.commerce.app.COMMERCE_Business.shared.PropertyManager;
 import com.commerce.app.COMMERCE_WebService.rest.domain.Users;
 
 public class UserTest {
 
-	 @Test 
-	  public void userRegister() {
-	    HttpHeaders headers = new HttpHeaders();
+
+	PropertyManager prop;
+	HttpHeaders headers;
+	RestTemplate template;
+	
+	@Before
+	public void setUp() throws Exception {
+		prop = PropertyManager.getInstance();
+		prop.setConfigPropertiesPath("/COMMERCE_WebService/src/test/java/resources/test.properties");
+		headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_JSON);
 	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-
-	    RestTemplate template = new RestTemplate();
-
+	    template = new RestTemplate();
+	}
+	
+	 @Test 
+	  public void userRegister() {
 	    HttpEntity<String> requestEntity = new HttpEntity<String>(
 	    		standardOrderJSON(),headers);
 	    
@@ -28,7 +39,7 @@ public class UserTest {
 	    		createUser(),headers);*/
 
 	    Users entity = template.postForObject(
-	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/users/registerUser",
+	    		prop.getProperty("host.url")+  "/api/action/users/registerUser",
 	        requestEntity, Users.class);
 
 	    
@@ -44,12 +55,6 @@ public class UserTest {
 	 @Ignore
 	 @Test 
 	  public void userLogin() {
-		 	HttpHeaders headers = new HttpHeaders();
-		    headers.setContentType(MediaType.APPLICATION_JSON);
-		    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-
-		    RestTemplate template = new RestTemplate();
-
 		    HttpEntity<String> requestEntity = new HttpEntity<String>(
 		    		standardOrderJSON(),headers);
 		    
@@ -57,7 +62,7 @@ public class UserTest {
 		    		createUser(),headers);*/
 
 		    Users entity = template.postForObject(
-		        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/users/login",
+		    		prop.getProperty("host.url")+  "/api/action/users/login",
 		        requestEntity, Users.class);
 
 		    

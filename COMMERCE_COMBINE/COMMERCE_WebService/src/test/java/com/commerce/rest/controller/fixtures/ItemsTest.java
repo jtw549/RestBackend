@@ -2,6 +2,7 @@ package com.commerce.rest.controller.fixtures;
 
 import java.util.Arrays;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.HttpEntity;
@@ -9,41 +10,45 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
+import com.commerce.app.COMMERCE_Business.shared.PropertyManager;
 import com.commerce.app.COMMERCE_WebService.rest.domain.Inventories;
 
 public class ItemsTest {
 	
+
+	PropertyManager prop;
+	HttpHeaders headers;
+	RestTemplate template;
+	
+	@Before
+	public void setUp() throws Exception {
+		prop = PropertyManager.getInstance();
+		prop.setConfigPropertiesPath("/COMMERCE_WebService/src/test/java/resources/test.properties");
+		headers = new HttpHeaders();
+	    headers.setContentType(MediaType.APPLICATION_JSON);
+	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+	    template = new RestTemplate();
+	}
+	
 	 @Ignore
 	 @Test 
 	  public void itemAdd() {
-	    HttpHeaders headers = new HttpHeaders();
-	    headers.setContentType(MediaType.APPLICATION_JSON);
-	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-
-	    RestTemplate template = new RestTemplate();
-
 	    HttpEntity<String> requestEntity = new HttpEntity<String>(
 	    		standardOrderJSON(),headers);
 	    
 	    Inventories entity = template.postForObject(
-	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/items/addItem",
+	    		prop.getProperty("host.url")+  "/api/action/items/addItem",
 	        requestEntity, Inventories.class);
 
 	  }
 	 
 	 @Test 
 	  public void itemdelete() {
-	    HttpHeaders headers = new HttpHeaders();
-	    headers.setContentType(MediaType.APPLICATION_JSON);
-	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-
-	    RestTemplate template = new RestTemplate();
-
 	    HttpEntity<String> requestEntity = new HttpEntity<String>(
 	    		standardOrderJSON(),headers);
 	    
 	    Inventories entity = template.postForObject(
-	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/items/deleteItem",
+	    		prop.getProperty("host.url")+  "/api/action/items/deleteItem",
 	        requestEntity, Inventories.class);
 
 	  }
@@ -51,17 +56,11 @@ public class ItemsTest {
 	 @Ignore
 	 @Test 
 	  public void itemupdate() {
-	    HttpHeaders headers = new HttpHeaders();
-	    headers.setContentType(MediaType.APPLICATION_JSON);
-	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-
-	    RestTemplate template = new RestTemplate();
-
 	    HttpEntity<String> requestEntity = new HttpEntity<String>(
 	    		standardOrderJSON(),headers);
 	    
 	    Inventories entity = template.postForObject(
-	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/items/updateItem",
+	    		prop.getProperty("host.url")+  "/api/action/items/updateItem",
 	        requestEntity, Inventories.class);
 
 	  }

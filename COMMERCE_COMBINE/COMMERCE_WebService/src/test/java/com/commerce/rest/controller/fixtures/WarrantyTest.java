@@ -2,63 +2,65 @@ package com.commerce.rest.controller.fixtures;
 
 import java.util.Arrays;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
+import com.commerce.app.COMMERCE_Business.shared.PropertyManager;
 import com.commerce.app.COMMERCE_WebService.rest.domain.InventoryWarranty;
 
 public class WarrantyTest {
 
-	 @Test 
-	  public void warrantyAdd() {
-	    HttpHeaders headers = new HttpHeaders();
+	PropertyManager prop;
+	HttpHeaders headers;
+	RestTemplate template;
+	
+	@Before
+	public void setUp() throws Exception {
+		prop = PropertyManager.getInstance();
+		prop.setConfigPropertiesPath("/COMMERCE_WebService/src/test/java/resources/test.properties");
+		headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_JSON);
 	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-
-	    RestTemplate template = new RestTemplate();
+	    template = new RestTemplate();
+	}
+	
+	 @Test 
+	  public void warrantyAdd() {
 
 	    HttpEntity<String> requestEntity = new HttpEntity<String>(
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryWarranty entity = template.postForObject(
-	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/warranties/addWarranty",
+	    		prop.getProperty("host.url")+  "/api/action/warranties/addWarranty",
 	        requestEntity, InventoryWarranty.class);
 
 	  }
 	 
 	 @Test 
 	  public void warrantyDelete() {
-	    HttpHeaders headers = new HttpHeaders();
-	    headers.setContentType(MediaType.APPLICATION_JSON);
-	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-
 	    RestTemplate template = new RestTemplate();
 
 	    HttpEntity<String> requestEntity = new HttpEntity<String>(
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryWarranty entity = template.postForObject(
-	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/warranties/deleteWarranty",
+	    		prop.getProperty("host.url")+ "/api/action/warranties/deleteWarranty",
 	        requestEntity, InventoryWarranty.class);
 
 	  }
 	 
 	 @Test 
 	  public void warrantyUpdate() {
-	    HttpHeaders headers = new HttpHeaders();
-	    headers.setContentType(MediaType.APPLICATION_JSON);
-	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-
-	    RestTemplate template = new RestTemplate();
 
 	    HttpEntity<String> requestEntity = new HttpEntity<String>(
 	    		standardOrderJSON(),headers);
 	    
 	    InventoryWarranty entity = template.postForObject(
-	        "http://localhost:8081/COMMERCE_WebService-3.0-SNAPSHOT/api/action/warranties/updateWarranty",
+	    		prop.getProperty("host.url")+ "/api/action/warranties/updateWarranty",
 	        requestEntity, InventoryWarranty.class);
 
 	  }

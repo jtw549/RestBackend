@@ -88,7 +88,7 @@
 				<groupId>org.apache.tomcat.maven</groupId>
           		<artifactId>tomcat6-maven-plugin</artifactId>
 				<configuration>
-					<warFile>target\COMMERCE_WebService-1.0.war</warFile>
+					<warFile>target\COMMERCE.war</warFile>
 					<url>http://127.0.0.1:8080/manager</url>
 					<server>TomcatServer</server>
 					<path>/COMMERCEApp</path>
