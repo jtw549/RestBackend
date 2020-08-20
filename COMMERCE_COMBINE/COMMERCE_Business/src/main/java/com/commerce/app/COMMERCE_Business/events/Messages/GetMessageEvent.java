@@ -1,8 +1,8 @@
 package com.commerce.app.COMMERCE_Business.events.Messages;
 
-import com.commerce.app.COMMERCE_Business.events.ReadEvent;
+import com.commerce.app.COMMERCE_Business.events.sharedEvent;
 
-public class GetMessageEvent extends ReadEvent{
+public class GetMessageEvent extends sharedEvent{
 	/* "message": {
     "userId": ""
 }*/
@@ -15,4 +15,10 @@ public class GetMessageEvent extends ReadEvent{
 	public GetMessageEvent (MessagesDetails messagesDetails) {
 		this.messagesDetails = messagesDetails;
 	}
+	
+	/*public MessagesDeletedEvent (Messages messages) {
+		MessagesDetails messagesDetails = new MessagesDetails();
+		//messagesDetails2
+		this.messagesDetails = messagesDetails;
+	}*/
 }

@@ -1,8 +1,6 @@
 package com.commerce.app.COMMERCE_Business.events.Warranty;
 
-import com.commerce.app.COMMERCE_Business.events.CreateEvent;
-
-public class AddWarrantyEvent extends CreateEvent{
+public class AddWarrantyEvent {
 	/* "warranty": {
     "itemId": "",
     "issuer": "",
@@ -20,4 +18,10 @@ public class AddWarrantyEvent extends CreateEvent{
 	public AddWarrantyEvent(WarrantyDetails warrantyDetails) {
 		this.warrantyDetails = warrantyDetails;
 	}
+	
+	/*public WarrantyUpdatedEvent(ArrayList<InventoryWarranty> inventoryWarranty) {
+		WarrantyDetails warrantyDetails = new WarrantyDetails();
+		warrantyDetails.toWarrantyDetails(inventoryWarranty,warrantyDetails);
+		this.warrantyDetails = warrantyDetails;
+	}*/
 }

@@ -1,8 +1,7 @@
 package com.commerce.app.COMMERCE_Business.events.Notes;
 
-import com.commerce.app.COMMERCE_Business.events.CreateEvent;
 
-public class AddNotesEvent extends CreateEvent{
+public class AddNotesEvent {
 /*	"note": {
     "itemId": "",
     "title": "",
@@ -17,4 +16,10 @@ public class AddNotesEvent extends CreateEvent{
 	public NotesDetails getNotesDetails() {
 		return notesDetails;
 	}
+	
+	/*public NotesDeletedEvent (ArrayList<InventoryNotes> inventoryNotes) {
+		NotesDetails notesDetails = new NotesDetails();
+		notesDetails.toNotesDetails(inventoryNotes,notesDetails);
+		this.notesDetails = notesDetails;
+	}*/
 }

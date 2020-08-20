@@ -1,8 +1,7 @@
 package com.commerce.app.COMMERCE_Business.events.Comments;
 
-import com.commerce.app.COMMERCE_Business.events.CreateEvent;
 
-public class AddCommentsEvent extends CreateEvent{
+public class AddCommentsEvent  {
 	/*"comment": {
     "itemId": "",
     "userId": "",
