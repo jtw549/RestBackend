@@ -1,7 +1,7 @@
 package com.commerce.app.COMMERCE_Business.events.Comments;
 
 
-public class AddCommentsEvent  {
+public class CommentsEvent  {
 	/*"comment": {
     "itemId": "",
     "userId": "",
@@ -13,7 +13,7 @@ public class AddCommentsEvent  {
 		return commentsDetails;
 	}
 	
-	public AddCommentsEvent(CommentsDetails commentsDetails) {
+	public CommentsEvent(CommentsDetails commentsDetails) {
 		this.commentsDetails = commentsDetails;
 	}
 }

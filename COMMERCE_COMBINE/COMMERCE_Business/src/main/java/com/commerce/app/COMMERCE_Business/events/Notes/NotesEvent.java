@@ -1,7 +1,7 @@
 package com.commerce.app.COMMERCE_Business.events.Notes;
 
 
-public class AddNotesEvent {
+public class NotesEvent {
 /*	"note": {
     "itemId": "",
     "title": "",
@@ -9,7 +9,7 @@ public class AddNotesEvent {
 }*/
 	private NotesDetails notesDetails;
 	
-	public AddNotesEvent (NotesDetails notesDetails) {
+	public NotesEvent (NotesDetails notesDetails) {
 		this.notesDetails = notesDetails;
 	}
 

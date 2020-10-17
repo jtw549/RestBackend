@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.commerce.app.COMMERCE_Business.events.Category.AddCategoryEvent;
+import com.commerce.app.COMMERCE_Business.events.Category.CategoryEvent;
 import com.commerce.app.COMMERCE_Business.events.Category.CategoryAddedEvent;
 import com.commerce.app.COMMERCE_Business.events.Category.CategoryDeletedEvent;
 import com.commerce.app.COMMERCE_Business.events.Category.CategoryGottenEvent;
@@ -47,7 +47,7 @@ public class CategoryController {
 	@RequestMapping(value="/addCategory",method = RequestMethod.PUT)
 	public ResponseEntity<UserCategories> addCategories(@RequestBody UserCategories categories, UriComponentsBuilder builder) {
 		
-    	CategoryAddedEvent categoryAddedEvent = catergoryService.addCategory(new AddCategoryEvent(categories.toCategoryDetails()));
+    	CategoryAddedEvent categoryAddedEvent = catergoryService.addCategory(new CategoryEvent(categories.toCategoryDetails()));
 		UserCategories newUserCategories = categories.fromCategoryDetails(categoryAddedEvent.getCategoryDetails());
     	
 		return new ResponseEntity<UserCategories>(newUserCategories, HttpStatus.CREATED);

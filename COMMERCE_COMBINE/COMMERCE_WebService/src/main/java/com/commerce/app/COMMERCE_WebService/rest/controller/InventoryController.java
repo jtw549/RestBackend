@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.commerce.app.COMMERCE_Business.events.Items.AddItemEvent;
+import com.commerce.app.COMMERCE_Business.events.Items.ItemEvent;
 import com.commerce.app.COMMERCE_Business.events.Items.BookMarkItemEvent;
 import com.commerce.app.COMMERCE_Business.events.Items.DeleteItemEvent;
 import com.commerce.app.COMMERCE_Business.events.Items.GetItemsEvent;
@@ -75,7 +75,7 @@ public class InventoryController {
         	
         }
 		
-		ItemAddedEvent itemAddedEvent = inventoryService.addItem(new AddItemEvent(inventories.toItemsDetails()));
+		ItemAddedEvent itemAddedEvent = inventoryService.addItem(new ItemEvent(inventories.toItemsDetails()));
 		Inventories newInventories = inventories.fromItemsDetails(itemAddedEvent.getItemsDetails());
 		
 		return new ResponseEntity<Inventories>(newInventories,HttpStatus.CREATED);

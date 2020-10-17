@@ -1,11 +1,11 @@
 package com.commerce.app.COMMERCE_Business.services;
 
-import com.commerce.app.COMMERCE_Business.events.Warranty.*;
+import com.commerce.app.COMMERCE_Business.events.Warranty.WarrantyEvent;
 
 public interface WarrantyService {
 
-	public WarrantyAddedEvent addWarranty(AddWarrantyEvent addWarrantyEvent);
-	public WarrantyDeletedEvent deleteWarranty(DeleteWarrantyEvent deleteWarrantyEvent);
-	public WarrantyGottenEvent getWarranty(GetWarrantyEvent getWarrantyEvent);
-	public WarrantyUpdatedEvent updateWarranty(UpdateWarrantyEvent updateWarrantyEvent);
+	public WarrantyEvent addWarranty(WarrantyEvent addWarrantyEvent);
+	public boolean deleteWarranty(WarrantyEvent deleteWarrantyEvent);
+	public WarrantyEvent getWarranty(WarrantyEvent getWarrantyEvent);
+	public WarrantyEvent updateWarranty(WarrantyEvent updateWarrantyEvent);
 }

@@ -1,7 +1,10 @@
 package com.commerce.app.COMMERCE_Business.events.Tags;
 
+import java.util.ArrayList;
 
-public class AddTagEvent {
+import com.commerce.app.COMMERCE_Domain.domain.InventoryTags;
+
+public class TagEvent {
 
 	private TagDetails tagDetails;
 
@@ -9,20 +12,20 @@ public class AddTagEvent {
 		return tagDetails;
 	}
 	
-	public AddTagEvent (TagDetails tagDetails) {
+	public TagEvent (TagDetails tagDetails) {
 		this.tagDetails = tagDetails;
 	}
 	
-	/*public TagAddedEvent (ArrayList<InventoryTags> inventoryTags) {
+	public TagEvent (ArrayList<InventoryTags> inventoryTags) {
 	TagDetails tagDetails = new TagDetails();
 	tagDetails.toTagDetails(inventoryTags);
 	this.tagDetails = tagDetails;
 	}
 
-	public TagUpdatedEvent (InventoryTags inventoryTags) {
+	public TagEvent (InventoryTags inventoryTags) {
 		TagDetails tagDetails = new TagDetails();
 		tagDetails.toTagDetails(inventoryTags);
 		this.tagDetails = tagDetails;
 	}
-*/
+
 }

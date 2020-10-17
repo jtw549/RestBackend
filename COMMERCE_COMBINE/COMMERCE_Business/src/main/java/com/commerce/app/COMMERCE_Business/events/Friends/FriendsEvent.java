@@ -2,7 +2,7 @@ package com.commerce.app.COMMERCE_Business.events.Friends;
 
 import com.commerce.app.COMMERCE_Domain.domain.Friends;
 
-public class AddFriendsEvent {
+public class FriendsEvent {
 	/* "friends": {
     "userId": "",
     "friendId": ""
@@ -13,7 +13,7 @@ public class AddFriendsEvent {
 		return friendsDetails;
 	}
 	
-	public AddFriendsEvent(FriendsDetails friendsDetails) {
+	public FriendsEvent(FriendsDetails friendsDetails) {
 		this.friendsDetails = friendsDetails;
 	}
 	

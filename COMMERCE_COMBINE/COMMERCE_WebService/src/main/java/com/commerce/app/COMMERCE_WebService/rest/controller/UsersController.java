@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.commerce.app.COMMERCE_Business.events.Users.DeleteUserEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.GetUserAccountInfoEvent;
-import com.commerce.app.COMMERCE_Business.events.Users.LoginUserEvent;
+import com.commerce.app.COMMERCE_Business.events.Users.UserEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.RegisterUserEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.UpdateUserEvent;
 import com.commerce.app.COMMERCE_Business.events.Users.UserAccountInfoGottenEvent;
@@ -121,7 +121,7 @@ public class UsersController {
 	public ResponseEntity<LoginEverythingDomains> loginUser(@RequestBody Users users) {
     	LoginEverythingDomains login = new LoginEverythingDomains();
     	
-    	UserLoggedInEvent loginUserEvent = userService.loginUser(new LoginUserEvent(users.toUserDetails()));
+    	UserLoggedInEvent loginUserEvent = userService.loginUser(new UserEvent(users.toUserDetails()));
     	LoginEverythingDomains loginEverythingDomains = login.fromLoginEverythingDetails(loginUserEvent.getUserDetails());
 		
     	return new ResponseEntity<LoginEverythingDomains>(loginEverythingDomains,HttpStatus.OK);

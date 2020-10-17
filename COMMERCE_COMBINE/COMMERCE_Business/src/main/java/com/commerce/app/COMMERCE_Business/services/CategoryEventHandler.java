@@ -9,17 +9,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.commerce.app.COMMERCE_Business.events.Category.AddCategoryEvent;
-import com.commerce.app.COMMERCE_Business.events.Category.CategoryAddedEvent;
-import com.commerce.app.COMMERCE_Business.events.Category.CategoryDeletedEvent;
-import com.commerce.app.COMMERCE_Business.events.Category.CategoryGottenEvent;
-import com.commerce.app.COMMERCE_Business.events.Category.CategoryUpdatedEvent;
-import com.commerce.app.COMMERCE_Business.events.Category.DeleteCategoryEvent;
-import com.commerce.app.COMMERCE_Business.events.Category.GetCategoryEvent;
-import com.commerce.app.COMMERCE_Business.events.Category.UpdateCategoryEvent;
+import com.commerce.app.COMMERCE_Business.events.Category.CategoryEvent;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.repository.CategoryRepository;
 
@@ -40,37 +32,37 @@ public class CategoryEventHandler implements CatergoryService{
 
 	
 	@Override
-	public CategoryAddedEvent addCategory(AddCategoryEvent addCategoryEvent) {
+	public CategoryEvent addCategory(CategoryEvent addCategoryEvent) {
 		UserCategories userCategories = addCategoryEvent.getCategoryDetails().fromCategoryDetails();
 		UserCategories userCategoriesResponse = categoryRepository.addUserCat(userCategories);
-		return new CategoryAddedEvent(userCategoriesResponse);
+		return new CategoryEvent(userCategoriesResponse);
 	}
 	
 	@Override
-	public CategoryDeletedEvent deleteCategory(DeleteCategoryEvent deleteCategoryEvent) {
+	public CategoryEvent deleteCategory(CategoryEvent deleteCategoryEvent) {
 		UserCategories userCategories = deleteCategoryEvent.getCategoryDetails().fromCategoryDetails();
 		boolean isDeleted = categoryRepository.deleteUserCat(userCategories);
-		
-		return new CategoryDeletedEvent(isDeleted);
+		//return boolean
+		return new CategoryEvent(isDeleted);
 	}
 	
 	@Override
-	public CategoryGottenEvent getCategory(GetCategoryEvent getCategoryEvent) {
+	public CategoryEvent getCategory(CategoryEvent getCategoryEvent) {
 		UserCategories userCategories = getCategoryEvent.getCategoryDetails().fromCategoryDetails();
 		searchUserCategoryQuery
 		= new Query(Criteria.where("userId").is(userCategories.getUserId()));
 		UserCategories userCatArray = (UserCategories) mongoTemplate.find(searchUserCategoryQuery, UserCategories.class);
 		
-		return new CategoryGottenEvent(userCatArray);
+		return new CategoryEvent(userCatArray);
 	}
 	
 	@Override
-	public CategoryUpdatedEvent updateCategory(UpdateCategoryEvent updateCategoryEvent) {
+	public CategoryEvent updateCategory(CategoryEvent updateCategoryEvent) {
 		UserCategories newUserCategories = updateCategoryEvent.getCategoryDetails().fromCategoryDetails();
 		UserCategories userCategoriesResponse = categoryRepository.updateUserCat(newUserCategories);
 		if(userCategoriesResponse == null) {
 			LOG.error("User Category does not exist for update");
 		}
-		return new CategoryUpdatedEvent(userCategoriesResponse);
+		return new CategoryEvent(userCategoriesResponse);
 	}
 }

@@ -17,6 +17,7 @@ import com.commerce.app.COMMERCE_Domain.domain.LoginEverythingDomain;
 import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
 import com.commerce.app.COMMERCE_Domain.domain.Users;
 import com.commerce.app.COMMERCE_Domain.domain.Users2;
+import com.mongodb.client.result.DeleteResult;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository{
@@ -31,12 +32,15 @@ public class UserRepositoryImpl implements UserRepository{
 	SequenceRepository sequenceRepository;
 	
 	public Users registerUser(Users users) {
+		Users userCheck = new Users();
+		userQuery = new Query(Criteria.where("email").is(users.getEmail()));
+		userCheck = mongoOperation.findOne(userQuery, Users.class);
+		if(userCheck !=null){
+			//need to set a boolean if the user already exists
+		}
+		
 		users.setUserId((int) sequenceRepository.getNextSequenceId("userID_Sequence"));
-		mongoOperation.save(users);
-		userQuery = new Query(Criteria.where("email").is(users.getEmail())
-				.andOperator(Criteria.where("password").is(users.getPassword())));
-		users = mongoOperation.findOne(userQuery, Users.class);
-		return users;
+		return mongoOperation.save(users);
 	}
 	
 	public LoginEverythingDomain loginUser (Users users,LoginEverythingDomain loginEverythingDomain) {
@@ -77,8 +81,31 @@ public class UserRepositoryImpl implements UserRepository{
 			//loginEverythingDomain.setUsersMessages(userMessages);
 		}
 		
-		
 		return loginEverythingDomain;
 	}
 	
+	public Users updateUser(Users users) {
+		return mongoOperation.save(users);
+		
+	}
+	
+	public boolean deleteUser(Users users) {
+		DeleteResult DR= mongoOperation.remove(users);
+		return DR.wasAcknowledged();
+		
+	}
+
+	public Users getAccountInfo(Users users) {
+		userQuery = new Query(Criteria.where("userId").is(users.getUserId()));
+		users = mongoOperation.findOne(userQuery, Users.class);
+		return users;
+	
+	}
+
+	public boolean logoutUser(Users users) {
+		boolean updated =false;
+		return updated;
+	}
+
+
 }

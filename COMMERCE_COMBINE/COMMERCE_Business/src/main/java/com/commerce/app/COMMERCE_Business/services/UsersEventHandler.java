@@ -25,47 +25,47 @@ public class UsersEventHandler implements UsersService{
 	Query userQuery;
 	
 	@Override
-	public UserRegisteredEvent registerUser(RegisterUserEvent registerUserEvent) {
+	public UserEvent registerUser(UserEvent registerUserEvent) {
 		Users users = registerUserEvent.getUserDetails().fromUserDetails();
 		users = userRepository.registerUser(users);
-		return new UserRegisteredEvent(users);
+		return new UserEvent(users);
 	}
 	
 	@Override
-	public UserUpdatedEvent updateUser(UpdateUserEvent updateUserEvent) {
+	public UserEvent updateUser(UserEvent updateUserEvent) {
 		Users users = updateUserEvent.getUserDetails().fromUserDetails();
-		mongoTemplate.save(users);
-		return new UserUpdatedEvent(users);
+		users= userRepository.updateUser(users);
+		return new UserEvent(users);
 	}
 	
 	@Override
-	public UserDeletedEvent deleteUser(DeleteUserEvent deleteUserEvent) {
+	public boolean deleteUser(UserEvent deleteUserEvent) {
 		Users users = deleteUserEvent.getUserDetails().fromUserDetails();
-		mongoTemplate.remove(users);
-		return new UserDeletedEvent(users);
+		boolean deleted = userRepository.deleteUser(users);
+		return deleted;
 	}
 	
 	@Override
-	public UserAccountInfoGottenEvent getAccountInfo(GetUserAccountInfoEvent getUserAccountInfoEvent) {
+	public UserEvent getAccountInfo(UserEvent getUserAccountInfoEvent) {
 		Users users = getUserAccountInfoEvent.getUserDetails().fromUserDetails();
-		userQuery = new Query(Criteria.where("userId").is(users.getUserId()));
-		users = mongoTemplate.findOne(userQuery, Users.class);
-		return new UserAccountInfoGottenEvent(users);
+		users=userRepository.getAccountInfo(users);
+		return new UserEvent(users);
 	}
 	
 	@Override
-	public UserLoggedInEvent loginUser(LoginUserEvent loginUserEvent) {
+	public UserEvent loginUser(UserEvent loginUserEvent) {
 		Users users = loginUserEvent.getUserDetails().fromUserDetails();
 		LoginEverythingDomain loginEverythingDomain=new LoginEverythingDomain();
 		loginEverythingDomain = userRepository.loginUser(users,loginEverythingDomain);
-		return new UserLoggedInEvent(loginEverythingDomain);
+		return new UserEvent(loginEverythingDomain);
 	}
 	
 	@Override
-	public UserLoggedOutEvent logoutUser(LoginUserEvent loginUserEvent) {
+	public boolean logoutUser(UserEvent loginUserEvent) {
 		//Need to figure out what this is going to do
 		Users users = loginUserEvent.getUserDetails().fromUserDetails();
-		return new UserLoggedOutEvent(users);
+		boolean loggedout = userRepository.logoutUser(users);
+		return loggedout;
 	}
 	
 }

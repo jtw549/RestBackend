@@ -1,7 +1,7 @@
 package com.commerce.app.COMMERCE_Business.events.Media;
 
 
-public class AddMediaEvent{
+public class MediaEvent{
 
 	private MediaDetails mediaDetails;
 
@@ -9,7 +9,7 @@ public class AddMediaEvent{
 		return mediaDetails;
 	}
 	
-	public AddMediaEvent (MediaDetails mediaDetails) {
+	public MediaEvent (MediaDetails mediaDetails) {
 		this.mediaDetails = mediaDetails;
 	}
 	

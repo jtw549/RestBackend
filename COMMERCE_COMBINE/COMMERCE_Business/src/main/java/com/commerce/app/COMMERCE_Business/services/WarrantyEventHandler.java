@@ -22,31 +22,27 @@ public class WarrantyEventHandler implements WarrantyService{
 	private WarrantyRepository warrantyRepository;
 	
 	
-	@Override
-	public WarrantyAddedEvent addWarranty(AddWarrantyEvent addWarrantyEvent) {
+	public WarrantyEvent addWarranty(WarrantyEvent addWarrantyEvent) {
 		InventoryWarranty inventoryWarranty = addWarrantyEvent.getWarrantyDetails().fromWarrantyDetails();
 		ArrayList<InventoryWarranty> warranties = warrantyRepository.addWarranty(inventoryWarranty);
-		return new WarrantyAddedEvent(warranties);
+		return  new WarrantyEvent(warranties);
 	}
 	
-	@Override
-	public WarrantyDeletedEvent deleteWarranty(DeleteWarrantyEvent deleteWarrantyEvent) {
+	public boolean deleteWarranty(WarrantyEvent deleteWarrantyEvent) {
 		InventoryWarranty inventoryWarranty = deleteWarrantyEvent.getWarrantyDetails().fromWarrantyDetails();
-		ArrayList<InventoryWarranty> warranties = warrantyRepository.deleteWarranty(inventoryWarranty);
-		return new WarrantyDeletedEvent(warranties);
+		boolean deletedWarranty = warrantyRepository.deleteWarranty(inventoryWarranty);
+		return deletedWarranty;
 	}
 	
-	@Override// here just in case
-	public WarrantyGottenEvent getWarranty(GetWarrantyEvent getWarrantyEvent) {
+	public WarrantyEvent getWarranty(WarrantyEvent getWarrantyEvent) {
 		InventoryWarranty inventoryWarranty = getWarrantyEvent.getWarrantyDetails().fromWarrantyDetails();
 		ArrayList<InventoryWarranty> warranties = warrantyRepository.getWarranty(inventoryWarranty);
-		return new WarrantyGottenEvent(inventoryWarranty);
+		return new WarrantyEvent(warranties);
 	}
 	
-	@Override
-	public WarrantyUpdatedEvent updateWarranty(UpdateWarrantyEvent updateWarrantyEvent) {
+	public WarrantyEvent updateWarranty(WarrantyEvent updateWarrantyEvent) {
 		InventoryWarranty inventoryWarranty = updateWarrantyEvent.getWarrantyDetails().fromWarrantyDetails();
 		ArrayList<InventoryWarranty> warranties = warrantyRepository.updateWarranty(inventoryWarranty);
-		return new WarrantyUpdatedEvent(warranties);
+		return new WarrantyEvent(warranties);
 	}
 }

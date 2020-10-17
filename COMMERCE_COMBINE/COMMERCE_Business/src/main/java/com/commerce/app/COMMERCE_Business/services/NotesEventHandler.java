@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
-import com.commerce.app.COMMERCE_Business.events.Notes.*;
+import com.commerce.app.COMMERCE_Business.events.Notes.NotesEvent;
 import com.commerce.app.COMMERCE_Domain.domain.InventoryNotes;
 import com.commerce.app.COMMERCE_Domain.repository.NotesRepository;
 
@@ -23,30 +23,30 @@ public class NotesEventHandler implements NotesService{
 	
 	
 	@Override
-	public NotesAddedEvent addNotes(AddNotesEvent addNotesEvent) {
+	public NotesEvent addNotes(NotesEvent addNotesEvent) {
 		InventoryNotes inventoryNotes = addNotesEvent.getNotesDetails().fromNotesDetails();
 		ArrayList<InventoryNotes> iNotes = notesRepository.addNotes(inventoryNotes);
-		return new NotesAddedEvent(iNotes);
+		return new NotesEvent(iNotes);
 	}
 	
 	@Override
-	public NotesDeletedEvent deleteNotes(DeleteNotesEvent deleteNotesEvent) {
+	public NotesEvent deleteNotes(NotesEvent deleteNotesEvent) {
 		InventoryNotes inventoryNotes = deleteNotesEvent.getNotesDetails().fromNotesDetails();
 		ArrayList<InventoryNotes> iNotes = notesRepository.deleteNotes(inventoryNotes);
-		return new NotesDeletedEvent(iNotes);
+		return new NotesEvent(iNotes);
 	}
 	
 	@Override
-	public NotesGottenEvent getNotes(GetNotesEvent getNotesEvent) {
+	public NotesEvent getNotes(NotesEvent getNotesEvent) {
 		InventoryNotes inventoryNotes = getNotesEvent.getNotesDetails().fromNotesDetails();
 		ArrayList<InventoryNotes> iNotes = notesRepository.getNotes(inventoryNotes);
-		return new NotesGottenEvent(iNotes);
+		return new NotesEvent(iNotes);
 	}
 	
 	@Override
-	public NotesUpdatedEvent updateNotes(UpdateNotesEvent updateNotesEvent) {
+	public NotesEvent updateNotes(NotesEvent updateNotesEvent) {
 		InventoryNotes inventoryNotes = updateNotesEvent.getNotesDetails().fromNotesDetails();
 		ArrayList<InventoryNotes> iNotes = notesRepository.updateNotes(inventoryNotes);
-		return new NotesUpdatedEvent(iNotes);
+		return new NotesEvent(iNotes);
 	}
 }

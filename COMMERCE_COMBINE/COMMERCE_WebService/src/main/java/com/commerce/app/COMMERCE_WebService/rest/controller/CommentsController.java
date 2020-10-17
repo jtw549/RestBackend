@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.commerce.app.COMMERCE_Business.events.Comments.AddCommentsEvent;
+import com.commerce.app.COMMERCE_Business.events.Comments.CommentsEvent;
 import com.commerce.app.COMMERCE_Business.events.Comments.CommentsAddedEvent;
 import com.commerce.app.COMMERCE_Business.events.Comments.CommentsDeletedEvent;
 import com.commerce.app.COMMERCE_Business.events.Comments.CommentsGottenEvent;
@@ -47,7 +47,7 @@ public class CommentsController {
 	             })
 	@RequestMapping(value="/addComment",method = RequestMethod.PUT)
 	public ResponseEntity<InventoryComments> addComment(@RequestBody InventoryComments inventoryComments, UriComponentsBuilder builder) {
-		CommentsAddedEvent commentsAddedEvent = commentsService.addComments(new AddCommentsEvent(inventoryComments.toCommentsDetails()));
+		CommentsAddedEvent commentsAddedEvent = commentsService.addComments(new CommentsEvent(inventoryComments.toCommentsDetails()));
     	InventoryComments addedInventoryComments = inventoryComments.fromCommentsDetails(commentsAddedEvent.getCommentsDetails());
     	
     	return new ResponseEntity<InventoryComments>(addedInventoryComments, HttpStatus.CREATED);

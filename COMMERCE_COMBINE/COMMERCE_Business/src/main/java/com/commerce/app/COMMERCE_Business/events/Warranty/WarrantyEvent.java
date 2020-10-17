@@ -1,6 +1,10 @@
 package com.commerce.app.COMMERCE_Business.events.Warranty;
 
-public class AddWarrantyEvent {
+import java.util.ArrayList;
+
+import com.commerce.app.COMMERCE_Domain.domain.InventoryWarranty;
+
+public class WarrantyEvent {
 	/* "warranty": {
     "itemId": "",
     "issuer": "",
@@ -15,13 +19,13 @@ public class AddWarrantyEvent {
 		return warrantyDetails;
 	}
 	
-	public AddWarrantyEvent(WarrantyDetails warrantyDetails) {
+	public WarrantyEvent(WarrantyDetails warrantyDetails) {
 		this.warrantyDetails = warrantyDetails;
 	}
 	
-	/*public WarrantyUpdatedEvent(ArrayList<InventoryWarranty> inventoryWarranty) {
+	public WarrantyEvent(ArrayList<InventoryWarranty> inventoryWarranty) {
 		WarrantyDetails warrantyDetails = new WarrantyDetails();
 		warrantyDetails.toWarrantyDetails(inventoryWarranty,warrantyDetails);
 		this.warrantyDetails = warrantyDetails;
-	}*/
+	}
 }

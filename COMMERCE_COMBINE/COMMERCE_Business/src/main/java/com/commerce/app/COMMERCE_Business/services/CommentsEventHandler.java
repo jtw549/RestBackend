@@ -22,32 +22,32 @@ public class CommentsEventHandler implements CommentsService{
 	private CommentsRepository commentsRepository;
 	
 	@Override
-	public CommentsAddedEvent addComments(AddCommentsEvent addCommentsEvent) {
+	public CommentsEvent addComments(CommentsEvent addCommentsEvent) {
 		InventoryComments inventoryComments = addCommentsEvent.getCommentsDetails().fromCommentsDetails();
 		ArrayList<InventoryComments> iComments = commentsRepository.addComments(inventoryComments);
-		return new CommentsAddedEvent(iComments);
+		return new CommentsEvent(iComments);
 	}
 	
 	@Override
-	public CommentsDeletedEvent deleteComments(DeleteCommentsEvent deleteCommentsEvent) {
+	public CommentsEvent deleteComments(CommentsEvent deleteCommentsEvent) {
 		InventoryComments inventoryComments = deleteCommentsEvent.getCommentsDetails().fromCommentsDetails();
 		ArrayList<InventoryComments> iComments = commentsRepository.deleteComments(inventoryComments);
-		return new CommentsDeletedEvent(iComments);
+		return new CommentsEvent(iComments);
 	}
 	
 	@Override
-	public CommentsGottenEvent getComments(GetCommentsEvent getCommentsEvent) {
+	public CommentsEvent getComments(CommentsEvent getCommentsEvent) {
 		//Added just in case
 		InventoryComments inventoryComments = getCommentsEvent.getCommentsDetails().fromCommentsDetails();
 		ArrayList<InventoryComments> iComments = commentsRepository.getComments(inventoryComments);
-		return new CommentsGottenEvent(inventoryComments);
+		return new CommentsEvent(inventoryComments);
 	}
 	
 	@Override
-	public CommentsUpdatedEvent updateComments(UpdateCommentsEvent updateCommentsEvent) {
+	public CommentsEvent updateComments(CommentsEvent updateCommentsEvent) {
 		//Added just in case
 		InventoryComments inventoryComments = updateCommentsEvent.getCommentsDetails().fromCommentsDetails();
 		ArrayList<InventoryComments> iComments = commentsRepository.updateComments(inventoryComments);
-		return new CommentsUpdatedEvent(inventoryComments);
+		return new CommentsEvent(inventoryComments);
 	}
 }

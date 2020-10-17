@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 
-public class AddItemEvent{
+public class ItemEvent{
 /*	"item": {
     "userId": "3489EAGFOJG489UPGAJREP",
     "make": "",
@@ -132,21 +132,21 @@ public class AddItemEvent{
 		return itemsDetails;
 	}
 	
-	public AddItemEvent (ItemsDetails itemsDetails) {
+	public ItemEvent (ItemsDetails itemsDetails) {
 		this.itemsDetails = itemsDetails;
 	}
 	
-	/*public ItemAddedEvent(Inventories inventories) {
+	public ItemEvent(Inventories inventories) {
 	ItemsDetails itemsDetails = new ItemsDetails();
 	itemsDetails.toItemsDetails(inventories,itemsDetails);
 	this.itemsDetails = itemsDetails;
-}
+	}
 
-public ItemGottenEvent(ArrayList<Inventories> inventories) {
+	public ItemEvent(ArrayList<Inventories> inventories) {
 		ItemsDetails itemsDetails = new ItemsDetails();
 		itemsDetails.toItemsDetails(inventories,itemsDetails);
 		this.itemsDetails = itemsDetails;
 	}
 
-*/
+
 }

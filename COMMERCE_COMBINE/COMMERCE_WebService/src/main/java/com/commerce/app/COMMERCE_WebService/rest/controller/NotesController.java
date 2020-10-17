@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.commerce.app.COMMERCE_Business.events.Notes.AddNotesEvent;
+import com.commerce.app.COMMERCE_Business.events.Notes.NotesEvent;
 import com.commerce.app.COMMERCE_Business.events.Notes.DeleteNotesEvent;
 import com.commerce.app.COMMERCE_Business.events.Notes.GetNotesEvent;
 import com.commerce.app.COMMERCE_Business.events.Notes.NotesAddedEvent;
@@ -47,7 +47,7 @@ public class NotesController {
 			           })
 	@RequestMapping(value="/addNote",method = RequestMethod.PUT)
 	public ResponseEntity<InventoryNotes> addNote(@RequestBody InventoryNotes inventoryNotes, UriComponentsBuilder builder) {
-		NotesAddedEvent notesAddedEvent = notesService.addNotes(new AddNotesEvent(inventoryNotes.toNotesDetails()));
+		NotesAddedEvent notesAddedEvent = notesService.addNotes(new NotesEvent(inventoryNotes.toNotesDetails()));
     	InventoryNotes addInventoryNotes = inventoryNotes.fromNotesDetails(notesAddedEvent.getNotesDetails());
 		
     	return new ResponseEntity<InventoryNotes>(addInventoryNotes, HttpStatus.CREATED);

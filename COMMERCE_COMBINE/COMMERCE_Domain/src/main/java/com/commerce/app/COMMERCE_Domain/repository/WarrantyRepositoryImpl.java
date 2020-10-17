@@ -42,15 +42,14 @@ public class WarrantyRepositoryImpl implements WarrantyRepository{
 		return inventoryWarranties;	
 	}
 	
-	public ArrayList<InventoryWarranty> deleteWarranty(InventoryWarranty inventoryWarranty){
+	public boolean deleteWarranty(InventoryWarranty inventoryWarranty){
 		searchWarrantyQuery = new Query(Criteria.where("userId").is(inventoryWarranty.getUserId())
 				.andOperator(Criteria.where("inventoryId").is(inventoryWarranty.getInventoryId())));
 		Inventories inventories = mongoOperation.findOne(searchWarrantyQuery, Inventories.class);
 		ArrayList<InventoryWarranty> inventoryWarranties = inventories.getInventoryWarranty();
-		inventoryWarranties.remove(inventoryWarranty);
-		inventories.setInventoryWarranty(inventoryWarranties);
-		mongoOperation.save(inventories);
-		return inventoryWarranties;	
+/*		inventories.setInventoryWarranty(inventoryWarranties);
+		mongoOperation.save(inventories);*/
+		return inventoryWarranties.remove(inventoryWarranty);	
 	}
 	
 	public ArrayList<InventoryWarranty> updateWarranty(InventoryWarranty inventoryWarranty){

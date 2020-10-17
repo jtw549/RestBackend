@@ -1,13 +1,13 @@
 package com.commerce.app.COMMERCE_Business.services;
 
-import com.commerce.app.COMMERCE_Business.events.Users.*;
+import com.commerce.app.COMMERCE_Business.events.Users.UserEvent;
 
 public interface UsersService {
 
-	public UserRegisteredEvent registerUser(RegisterUserEvent registerUserEvent);
-	public UserUpdatedEvent updateUser(UpdateUserEvent updateUserEvent);
-	public UserDeletedEvent deleteUser(DeleteUserEvent deleteUserEvent);
-	public UserAccountInfoGottenEvent getAccountInfo(GetUserAccountInfoEvent getUserAccountInfoEvent);
-	public UserLoggedInEvent loginUser(LoginUserEvent loginUserEvent);
-	public UserLoggedOutEvent logoutUser(LoginUserEvent loginUserEvent);
+	public UserEvent registerUser(UserEvent registerUserEvent);
+	public UserEvent updateUser(UserEvent updateUserEvent);
+	public boolean deleteUser(UserEvent deleteUserEvent);
+	public UserEvent getAccountInfo(UserEvent getUserAccountInfoEvent);
+	public UserEvent loginUser(UserEvent loginUserEvent);
+	public boolean logoutUser(UserEvent loginUserEvent);
 }

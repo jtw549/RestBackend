@@ -2,7 +2,7 @@ package com.commerce.app.COMMERCE_Business.events.Messages;
 
 import com.commerce.app.COMMERCE_Business.events.sharedEvent;
 
-public class GetMessageEvent extends sharedEvent{
+public class MessageEvent extends sharedEvent{
 	/* "message": {
     "userId": ""
 }*/
@@ -12,7 +12,7 @@ public class GetMessageEvent extends sharedEvent{
 		return messagesDetails;
 	}
 	
-	public GetMessageEvent (MessagesDetails messagesDetails) {
+	public MessageEvent (MessagesDetails messagesDetails) {
 		this.messagesDetails = messagesDetails;
 	}
 	

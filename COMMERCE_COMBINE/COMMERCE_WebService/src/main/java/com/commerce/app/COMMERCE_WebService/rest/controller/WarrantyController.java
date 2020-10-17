@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.commerce.app.COMMERCE_Business.events.Warranty.AddWarrantyEvent;
+import com.commerce.app.COMMERCE_Business.events.Warranty.WarrantyEvent;
 import com.commerce.app.COMMERCE_Business.events.Warranty.DeleteWarrantyEvent;
 import com.commerce.app.COMMERCE_Business.events.Warranty.GetWarrantyEvent;
 import com.commerce.app.COMMERCE_Business.events.Warranty.UpdateWarrantyEvent;
@@ -45,7 +45,7 @@ public class WarrantyController {
 	             })
 	@RequestMapping(value="/addWarranty",method = RequestMethod.POST)
 	public ResponseEntity<InventoryWarranty> addWarranty(@RequestBody InventoryWarranty inventoryWarranty, UriComponentsBuilder builder) {
-		WarrantyAddedEvent warrantyAddedEvent = warrantyService.addWarranty(new AddWarrantyEvent(inventoryWarranty.toWarrantyDetails()));
+		WarrantyAddedEvent warrantyAddedEvent = warrantyService.addWarranty(new WarrantyEvent(inventoryWarranty.toWarrantyDetails()));
 		InventoryWarranty addedInventoryWarranty = inventoryWarranty.fromWarrantyDetails(warrantyAddedEvent.getWarrantyDetails());
     	
 		return new ResponseEntity<InventoryWarranty>(addedInventoryWarranty, HttpStatus.CREATED);

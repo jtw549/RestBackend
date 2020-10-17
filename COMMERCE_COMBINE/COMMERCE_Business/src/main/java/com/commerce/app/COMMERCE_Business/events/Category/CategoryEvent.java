@@ -1,6 +1,11 @@
 package com.commerce.app.COMMERCE_Business.events.Category;
 
-public class AddCategoryEvent  {
+import java.util.ArrayList;
+
+import com.commerce.app.COMMERCE_Domain.domain.UserCategories;
+import com.commerce.app.COMMERCE_Domain.domain.UserCategoryArray;
+
+public class CategoryEvent  {
 /*	"category": {
     "userId": "3489EAGFOJG489UPGAJREP",
     "name": "Sports"
@@ -11,26 +16,26 @@ public class AddCategoryEvent  {
 		return categoryDetails;
 	}
 	
-	public AddCategoryEvent (CategoryDetails categoryDetails) {
+	public CategoryEvent (CategoryDetails categoryDetails) {
 		this.categoryDetails = categoryDetails;
 	}
 	
-	/*public CategoryAddedEvent(ArrayList<UserCategoryArray> userCategories ) {
+	public CategoryEvent(ArrayList<UserCategoryArray> userCategories ) {
 		CategoryDetails categoryDetails = new CategoryDetails();
 		categoryDetails.toCategoryDetails(userCategories,categoryDetails);
 		this.categoryDetails = categoryDetails;
 	}
 	
-	public CategoryAddedEvent(UserCategories userCategories ) {
+	public CategoryEvent(UserCategories userCategories ) {
 		CategoryDetails categoryDetails = new CategoryDetails();
 		categoryDetails.toCategoryDetails(userCategories,categoryDetails);
 		this.categoryDetails = categoryDetails;
 	}
 	
-	public CategoryDeletedEvent(boolean deleted) {
+	/*public CategoryDeletedEvent(boolean deleted) {
 		CategoryDetails categoryDetails = new CategoryDetails();
 		this.categoryDetails = categoryDetails;
 		this.setDeletionCompleted(deleted);
-	}
-	*/
+	}*/
+	
 }

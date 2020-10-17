@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import com.commerce.app.COMMERCE_Business.events.Items.*;
+import com.commerce.app.COMMERCE_Business.events.Items.ItemEvent;
 import com.commerce.app.COMMERCE_Domain.domain.Inventories;
 import com.commerce.app.COMMERCE_Domain.repository.ItemsRepository;
 
@@ -26,60 +26,55 @@ public class InventoryEventHandler implements InventoryService{
 	private ItemsRepository itemsRepository;
 	
 	Query inventoryQuery;
-	@Override
-	public ItemAddedEvent addItem(AddItemEvent addItemEvent) {
+
+	public ItemEvent addItem(ItemEvent addItemEvent) {
 		Inventories inventories = addItemEvent.getItemsDetails().fromItemsDetails();
 		inventories= itemsRepository.addItem(inventories);
-		return new ItemAddedEvent(inventories);
+		return new ItemEvent(inventories);
 	}
 	
-	@Override
-	public ItemUpdatedEvent updateItem(UpdateItemEvent updateItemEvent) {
+	public ItemEvent updateItem(ItemEvent updateItemEvent) {
 		Inventories inventories = updateItemEvent.getItemsDetails().fromItemsDetails();
 		inventories = itemsRepository.updateItem(inventories);
-		return new ItemUpdatedEvent(inventories);
+		return new ItemEvent(inventories);
 	}
 	
-	@Override
-	public ItemDeletedEvent deleteItem(DeleteItemEvent deleteItemEvent) {
+	public boolean deleteItem(ItemEvent deleteItemEvent) {
 		boolean deleted = false;
 		Inventories inventories = deleteItemEvent.getItemsDetails().fromItemsDetails();
 		deleted = itemsRepository.deleteItem(inventories);
-		return new ItemDeletedEvent(deleted);
+		return deleted;
 	}
 	
-	@Override
-	public ItemGottenEvent getItem(GetItemsEvent getItemsEvent) {
+	public ItemEvent getItem(ItemEvent getItemsEvent) {
 		Inventories inventories = getItemsEvent.getItemsDetails().fromItemsDetails();
 		inventories = itemsRepository.getItem(inventories);
 		
-		return new ItemGottenEvent(inventories);
+		return new ItemEvent(inventories);
 	}
 	
 	@Override
-	public ItemGottenEvent getItems(GetItemsEvent getItemsEvent) {
+	public ItemEvent getItems(ItemEvent getItemsEvent) {
 		//Might need more work done to this
 		Inventories inventories = getItemsEvent.getItemsDetails().fromItemsDetails();
 		ArrayList<Inventories> inventoriesArrayList = itemsRepository.getItems(inventories);
 		
-		return new ItemGottenEvent(inventoriesArrayList);
+		return new ItemEvent(inventoriesArrayList);
 	}
 	
-	@Override
-	public ItemGottenEvent getItemsbyCategory(GetItemsEvent getItemsEvent) {
+	public ItemEvent getItemsbyCategory(ItemEvent getItemsEvent) {
 		//Will need more work done to this
 		Inventories inventories = getItemsEvent.getItemsDetails().fromItemsDetails();
 		ArrayList<Inventories> inventoriesArrayList = itemsRepository.getItemsbyCategory(inventories);
 		
-		return new ItemGottenEvent(inventoriesArrayList);
+		return new ItemEvent(inventoriesArrayList);
 	}
 	
-	@Override
-	public ItemBookMarkedEvent bookmarkItem(BookMarkItemEvent bookMarkItemEvent) {
+	public ItemEvent bookmarkItem(ItemEvent bookMarkItemEvent) {
 		//Create a bookmark table for this. Each row will hold a list of inventory items or a link to that item.
 		Inventories inventories = bookMarkItemEvent.getItemsDetails().fromItemsDetails();
 		inventories = itemsRepository.bookmarkItem(inventories);
 		
-		return new ItemBookMarkedEvent(inventories);
+		return new ItemEvent(inventories);
 	}
 }

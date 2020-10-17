@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.commerce.app.COMMERCE_Business.events.Media.AddMediaEvent;
+import com.commerce.app.COMMERCE_Business.events.Media.MediaEvent;
 import com.commerce.app.COMMERCE_Business.events.Media.DeleteMediaEvent;
 import com.commerce.app.COMMERCE_Business.events.Media.MediaAddedEvent;
 import com.commerce.app.COMMERCE_Business.events.Media.MediaDeletedEvent;
@@ -63,7 +63,7 @@ public class MediaController {
             }
         } 
 		
-		MediaAddedEvent mediaAddedEvent =mediaService.addMedia(new AddMediaEvent(inventoryMedia.toMediaDetails()));
+		MediaAddedEvent mediaAddedEvent =mediaService.addMedia(new MediaEvent(inventoryMedia.toMediaDetails()));
 		InventoryMedia newInventoryMedia = inventoryMedia.fromMediaDetails(mediaAddedEvent.getMediaDetails());
 		
 		return new ResponseEntity<InventoryMedia>(newInventoryMedia,HttpStatus.CREATED);
